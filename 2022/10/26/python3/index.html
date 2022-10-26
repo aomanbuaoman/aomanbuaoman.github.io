@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+
+
+<html class="anya" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fff">
+
+<link rel="preload" href="/fonts/Candyshop.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+
+
+
+  
+
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/anya.min.css?v=1.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=1.0.2">
+
+
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0.2" color="#fff">
+
+
+  <link rel="manifest" href="/site.webmanifest">
+
+
+
+  <meta name="keywords" content="anya,blog,hexo,hexo-theme-anya" />
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var Anya = window.Anya || {};
+  var CONFIG = {
+    root: '',
+    version: '1.0.2',
+    sidebar: {"position":"right","offset":52,"b2t":true},
+    tabs: true,
+    since: '26/10/2022 9:30:00',
+    site: {
+      title: '',
+      subtitle: '',
+      author: ''
+    },
+    favicon: {
+      visibilitychange: true,
+      normal: '/favicon.ico',
+      hidden: '/failure.ico',
+      show_text: '(/≧▽≦/)咦！又好了！',
+      hide_text: '(●—●)喔哟，崩溃啦！'
+    }
+  };
+</script>
+
+
+
+
+  <title>python基础爬虫--代理池 | aoman</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fas fa-meteor"></i> <br />
+            
+            首页
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-跳转">
+          <a href="javascript:;" rel="section">
+            
+              <i class="menu-item-icon fas fa-magic"></i> <br />
+            
+            跳转
+          </a>
+          
+            <ul class="submenu submenu-跳转">
+              
+                
+                <li class="submenu-item submenu-item-twitter">
+                  <a target="_blank" href="https://twitter.com/" rel="section noopener">
+                    twitter
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-github">
+                  <a target="_blank" href="https://github.com/" rel="section noopener">
+                    github
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-youtube">
+                  <a target="_blank" href="https://www.youtube.com/" rel="section noopener">
+                    youtube
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-edit-me">
+                  <a href="javascript:;" rel="section">
+                    Edit me
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fas fa-archive"></i> <br />
+            
+            归档
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-页面">
+          <a href="/page/" rel="section">
+            
+              <i class="menu-item-icon fas fa-file-alt"></i> <br />
+            
+            页面
+          </a>
+          
+        </li>
+      
+
+      
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+          </form>
+      </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper">
+  <div class="site-brand-bg">
+      <img loading="lazy" src="/images/header.jpg">
+  </div>
+  <div class="site-meta">
+    <div class="custom-logo-site-title">
+      <div class="brand">
+        <span class="logo-line-before"><i></i></span>
+        <div class="site-title">
+          <div id="animate-stroke" class="animate">
+            <span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokeo"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokem"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#stroken"></use>
+                  </svg>
+                </span>
+          </div>
+          <div id="animate" class="animate">
+            <span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokeo">o</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokem">m</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="stroken">n</text>
+                  </svg>
+                </span>
+          </div>
+          <div id="guide" class="guide">
+            <span>a</span><span>o</span><span>m</span><span>a</span><span>n</span>
+          </div>
+        </div>
+        <span class="logo-line-after"><i></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-master-avatar scaleup" itemprop="image" src="/images/Anya.png" alt="" />
+    <h2 class="site-master-description scaleup" itemprop="description">
+        
+    </h2>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">10月</div>
+			<div class="post-day">26</div>
+	</div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/python3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Anya.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoman">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python基础爬虫--代理池</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T20:12:17+08:00">2022-10-26</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> requests <span class="keyword">import</span> adapters</span><br><span class="line"></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_66</span>(<span class="params">data_text1</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS_66</span><br><span class="line">    IPZ_66 = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td&gt;(\d+.\d+.\d+.\d+)&lt;/td&gt;&lt;td&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS_66 = re.findall(IPZ_66,data_text1)</span><br><span class="line">    <span class="keyword">return</span> IPS_66</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">port_p</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> DKS</span><br><span class="line">    DKZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;PORT&quot;&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    DKS = re.findall(DKZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> DKS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_ip</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS</span><br><span class="line">    IPZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;IP&quot;&gt;(\d+\.\d+\.\d+\.\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS = re.findall(IPZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> IPS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pinjie</span>():</span><br><span class="line">    <span class="comment"># 功能需求：实现两个IPS和DKS的拼接，结果是IPS:DSK</span></span><br><span class="line">    ip_z= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(IPS)):</span><br><span class="line">        ip_z.append(IPS[i]+<span class="string">&#x27;:&#x27;</span>+DKS[i])</span><br><span class="line">    <span class="comment"># 输出结果  [&#x27;xxxx:xxxx&#x27;]</span></span><br><span class="line">    dl_write(ip_z)</span><br><span class="line">    <span class="keyword">return</span> ip_z</span><br><span class="line"><span class="comment"># def merge_list(list1,list2):</span></span><br><span class="line"><span class="comment">#      python 有个拉链函数， zip(list1,list2),可以实现合并功能</span></span><br><span class="line"><span class="comment">#     print(list(zip(list1,list2)))</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dl_write</span>(<span class="params">ip_z</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> DIP <span class="keyword">in</span> ip_z:</span><br><span class="line">            f.write(DIP+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    test_corr()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_corr</span>():</span><br><span class="line">    corr=[]</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="comment"># 设置重连次数</span></span><br><span class="line">                adapters.DEFAULT_RETRIES = <span class="number">3</span></span><br><span class="line">                <span class="comment"># IP = random.choice(IPAgents)</span></span><br><span class="line">                proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">                <span class="comment"># thisIP = &quot;&quot;.join(IP.split(&quot;:&quot;)[0:1])</span></span><br><span class="line">                <span class="comment"># print(thisIP)</span></span><br><span class="line">                res = requests.get(url=<span class="string">&quot;http://icanhazip.com/&quot;</span>, timeout=<span class="number">2</span>, proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">                <span class="keyword">if</span> (res.status_code == <span class="number">200</span>):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;有效&quot;</span>)</span><br><span class="line">                    corr.append(i)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;无效&quot;</span>)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br><span class="line">    text_qualified(corr)</span><br><span class="line">    <span class="keyword">return</span> corr         </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text_qualified</span>(<span class="params">corr</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> corr:</span><br><span class="line">            f.write(i)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ipyc</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">            data = requests.get(<span class="string">&#x27;https://free.kuaidaili.com/free/inha/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_1=requests.get(<span class="string">&#x27;http://www.66ip.cn/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_text1=data_1.text</span><br><span class="line">            data_text = data.text</span><br><span class="line">            <span class="keyword">if</span> data.status_code == <span class="number">200</span>:</span><br><span class="line">                port_p(data_text)</span><br><span class="line">                ip_ip(data_text)</span><br><span class="line">                pinjie()</span><br><span class="line">                ip_66(data_text1)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">ipyc()</span><br><span class="line">    </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/10/26/python2/" rel="next" title="python进阶——正则表达式">
+                <i class="fas fa-angle-left"></i> python进阶——正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/10/26/%E5%89%8D%E7%AB%AF1/" rel="prev" title="HTML基础">
+                HTML基础 <i class="fas fa-angle-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+          
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <img class="site-author-image scaleup" itemprop="image"
+              src="/images/Anya.png"
+              alt="" />
+            <div class="site-author-info">
+              <p class="site-author-name" itemprop="name">aoman</p>
+              <p class="site-description" itemprop="description">生活无趣搞点<a target="_blank" rel="noopener" href="https://www.douyin.com/">好看的</a><br>
+每天变强一点点<br>
+生当做人杰，死亦为鬼雄。<br>
+天行健，君子以自强不息。<br>
+燕雀安知鸿鹄之志？<br>
+老骥伏枥，志在千里；烈士暮年，壮心不已。<br>
+天生我材必有用。<br>
+千磨万击还坚劲，任尔东西南北风。<br>
+</p>
+            </div>
+          </div>
+
+          <div class="links-of-author">
+            
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://twitter.com/" target="_blank" title="Twitter">
+                       <i class="fab fa-twitter" style="color: #2FB0EC"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://github.com/aomanbuaoman" target="_blank" title="GitHub">
+                       <i class="fab fa-github" style="color: #000"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="javascript:;" target="_blank" title="Edit">
+                       <i style="fill: #666"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16"><path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/></svg></i>
+                      <span> emmm </span>
+               </a>
+                </span>
+              
+            
+          </div>
+
+          <div class="des-of-author">
+              <div class="des-of-author-nav">
+                
+              </div>
+              <div class="des-of-author-panel">
+                
+              </div>
+          </div>
+
+          
+
+        </div>
+      </section>
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-image">
+        <img src="/images/footer.png">
+      </div>
+      <div class="footer-inner">
+        <p>博客已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+
+
+<p>© <span itemprop="copyrightYear">2022</span> aoman.
+    
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    
+    
+    Theme By <a href="https://github.com/XiangNorth/hexo-theme-anya" target="_blank" class="external" rel="nofollow">Anya</a>
+    
+    
+     v1.0.2.
+     
+     
+    <a href="/sitemap.xml" target="_blank">站点地图</a>.
+    
+</p>
+<p>Made with <i class="fas fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">John Doe</span>. </p>
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <img src="/images/scroll.png">
+      </div>
+    
+
+  </div>
+
+  <script type="text/javascript" src="/js/anya.min.js?v=1.0.2"></script>
+
+  
+
+  
+
+  
+  
+</body>
+</html>

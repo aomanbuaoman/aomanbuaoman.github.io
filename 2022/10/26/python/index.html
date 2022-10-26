@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+
+
+
+<html class="anya" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fff">
+
+<link rel="preload" href="/fonts/Candyshop.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+
+
+
+  
+
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/anya.min.css?v=1.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=1.0.2">
+
+
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0.2" color="#fff">
+
+
+  <link rel="manifest" href="/site.webmanifest">
+
+
+
+  <meta name="keywords" content="anya,blog,hexo,hexo-theme-anya" />
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var Anya = window.Anya || {};
+  var CONFIG = {
+    root: '',
+    version: '1.0.2',
+    sidebar: {"position":"right","offset":52,"b2t":true},
+    tabs: true,
+    since: '26/10/2022 9:30:00',
+    site: {
+      title: '',
+      subtitle: '',
+      author: ''
+    },
+    favicon: {
+      visibilitychange: true,
+      normal: '/favicon.ico',
+      hidden: '/failure.ico',
+      show_text: '(/≧▽≦/)咦！又好了！',
+      hide_text: '(●—●)喔哟，崩溃啦！'
+    }
+  };
+</script>
+
+
+
+
+  <title>python基础 | aoman</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fas fa-meteor"></i> <br />
+            
+            首页
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-跳转">
+          <a href="javascript:;" rel="section">
+            
+              <i class="menu-item-icon fas fa-magic"></i> <br />
+            
+            跳转
+          </a>
+          
+            <ul class="submenu submenu-跳转">
+              
+                
+                <li class="submenu-item submenu-item-twitter">
+                  <a target="_blank" href="https://twitter.com/" rel="section noopener">
+                    twitter
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-github">
+                  <a target="_blank" href="https://github.com/" rel="section noopener">
+                    github
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-youtube">
+                  <a target="_blank" href="https://www.youtube.com/" rel="section noopener">
+                    youtube
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-edit-me">
+                  <a href="javascript:;" rel="section">
+                    Edit me
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fas fa-archive"></i> <br />
+            
+            归档
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-页面">
+          <a href="/page/" rel="section">
+            
+              <i class="menu-item-icon fas fa-file-alt"></i> <br />
+            
+            页面
+          </a>
+          
+        </li>
+      
+
+      
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+          </form>
+      </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper">
+  <div class="site-brand-bg">
+      <img loading="lazy" src="/images/header.jpg">
+  </div>
+  <div class="site-meta">
+    <div class="custom-logo-site-title">
+      <div class="brand">
+        <span class="logo-line-before"><i></i></span>
+        <div class="site-title">
+          <div id="animate-stroke" class="animate">
+            <span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokeo"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokem"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#stroken"></use>
+                  </svg>
+                </span>
+          </div>
+          <div id="animate" class="animate">
+            <span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokeo">o</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokem">m</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="stroken">n</text>
+                  </svg>
+                </span>
+          </div>
+          <div id="guide" class="guide">
+            <span>a</span><span>o</span><span>m</span><span>a</span><span>n</span>
+          </div>
+        </div>
+        <span class="logo-line-after"><i></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-master-avatar scaleup" itemprop="image" src="/images/Anya.png" alt="" />
+    <h2 class="site-master-description scaleup" itemprop="description">
+        
+    </h2>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">10月</div>
+			<div class="post-day">26</div>
+	</div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Anya.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoman">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T16:28:18+08:00">2022-10-26</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      <div class="post-toc-content"><div class="post-toc-title">文章目录</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">1.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-text">1.1标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E4%BF%9D%E7%95%99%E5%AD%97%E7%AC%A6"><span class="nav-text">1.2保留字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E8%A1%8C%E5%92%8C%E7%BC%A9%E8%BF%9B"><span class="nav-text">1.3行和缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%A4%9A%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.4多行语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%BC%95%E5%8F%B7"><span class="nav-text">1.5引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E6%B3%A8%E9%87%8A"><span class="nav-text">1.6注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E7%A9%BA%E8%A1%8C"><span class="nav-text">1.7空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E7%AD%89%E5%BE%85%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="nav-text">1.8等待用户输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9%E5%90%8C%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA%E5%A4%9A%E6%9D%A1%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.9同一行显示多条语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E8%BE%93%E5%87%BA"><span class="nav-text">2.1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E5%A4%9A%E4%B8%AA%E8%AF%AD%E5%8F%A5%E6%9E%84%E6%88%90%E4%BB%A3%E7%A0%81%E7%BB%84"><span class="nav-text">2.2多个语句构成代码组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="nav-text">2.变量赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="nav-text">1.1多个变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.2标准数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E6%95%B0%E5%AD%97"><span class="nav-text">1.3数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%88%87%E7%89%87"><span class="nav-text">1.5切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">1.4字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5-x2F-x2F"><span class="nav-text">1.1字符串拼接&#x2F;&#x2F; +</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86"><span class="nav-text">1.2字符串格式化处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1format%E8%BF%9B%E9%98%B6"><span class="nav-text">1.1format进阶</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3find-amp-count"><span class="nav-text">1.3find&amp;count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4replace-amp-upper-amp-lower"><span class="nav-text">1.4replace&amp;upper&amp;lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5split-amp-strip"><span class="nav-text">1.5split&amp;strip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E4%BC%A0%E7%BB%9F%E6%A0%BC%E5%BC%8F%E5%8C%96-amp-F%EF%BC%88f%EF%BC%89%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">1.6传统格式化&amp;F（f）表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%88%97%E8%A1%A8"><span class="nav-text">1.5列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%9B%B4%E6%8D%A2"><span class="nav-text">1.1更换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%80%92%E5%BA%8F"><span class="nav-text">1.2倒序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%88%A0%E9%99%A4"><span class="nav-text">1.3删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E6%B7%BB%E5%8A%A0"><span class="nav-text">1.4添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E6%8F%92%E5%85%A5-amp-%E6%B8%85%E7%A9%BA"><span class="nav-text">1.5插入&amp;清空</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E7%A7%BB%E9%99%A4"><span class="nav-text">1.6移除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7index-amp-reverse"><span class="nav-text">1.7index&amp;reverse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8extend"><span class="nav-text">1.8extend</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9copy"><span class="nav-text">1.9copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1sort"><span class="nav-text">2.1sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2count"><span class="nav-text">2.2count</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%85%83%E7%BB%84"><span class="nav-text">1.6元组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%9C%80%E5%A4%A7-amp-%E6%9C%80%E5%B0%8F%E8%BE%93%E5%87%BA"><span class="nav-text">1.1最大&amp;最小输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E5%AD%97%E5%85%B8"><span class="nav-text">1.7字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%A2%9E-amp-%E5%88%A0-amp-%E6%94%B9-amp-%E6%9F%A5"><span class="nav-text">1.1增&amp;删&amp;改&amp;查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2get-amp-keys"><span class="nav-text">1.2get&amp;keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3items-amp-values"><span class="nav-text">1.3items&amp;values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4clear-amp-copy"><span class="nav-text">1.4clear&amp;copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5fromkeys-amp-pop"><span class="nav-text">1.5fromkeys&amp;pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6popitem-amp-setdeffault"><span class="nav-text">1.6popitem&amp;setdeffault</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7update"><span class="nav-text">1.7update</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8in-amp-not-in-is-amp-not-is"><span class="nav-text">1.8in&amp;not in\is&amp;not is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E9%9B%86%E5%90%88"><span class="nav-text">1.8集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%B7%BB%E5%8A%A0-amp-%E5%90%88%E5%B9%B6"><span class="nav-text">1.1添加&amp;合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%88%A0%E9%99%A4"><span class="nav-text">1.2删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86"><span class="nav-text">1.3交集并集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.8数据类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.9判断对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E8%AF%AD%E6%B3%95"><span class="nav-text">1.1语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%94%AF%E6%8C%81%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.1支持的运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.2算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.3比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.4赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.5位运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%AF%AD%E5%8F%A5"><span class="nav-text">4.语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.1条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1if"><span class="nav-text">1.1if</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.2循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1for"><span class="nav-text">1.1for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2while"><span class="nav-text">1.2while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.3关键字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%87%BD%E6%95%B0"><span class="nav-text">5.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.1关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E8%B0%83%E7%94%A8"><span class="nav-text">1.2调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E4%BC%A0%E5%8F%82"><span class="nav-text">1.3传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%82%E6%95%B0"><span class="nav-text">1.4参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E6%8B%86%E5%8C%85"><span class="nav-text">1.5拆包</span></a></li></ol></li></ol></li></ol></div>
+      
+      
+
+      
+        <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h2 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1.基础语法"></a>1.基础语法</h2><h3 id="1-1标识符"><a href="#1-1标识符" class="headerlink" title="1.1标识符"></a>1.1标识符</h3><p>在 Python 里，标识符由字母、数字、下划线组成。</p>
+<p>在 Python 中，所有标识符可以包括英文、数字以及下划线(_)，但不能以数字开头。</p>
+<p>Python 中的标识符是区分大小写的。</p>
+<p>以下划线开头的标识符是有特殊意义的。以单下划线开头 <strong>_foo</strong> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <strong>from xxx import *</strong> 而导入。</p>
+<p>以双下划线开头的 <strong>__foo</strong> 代表类的私有成员，以双下划线开头和结尾的 <strong><strong>foo</strong></strong> 代表 Python 里特殊方法专用的标识，如 <strong><strong>init</strong>()</strong> 代表类的构造函数。</p>
+<p>Python 可以同一行显示多条语句，方法是用分号 <strong>;</strong> 分开，如：</p>
+<p><code>print(&#39;123&#39;);print(&#39;456&#39;);</code></p>
+<h3 id="1-2保留字符"><a href="#1-2保留字符" class="headerlink" title="1.2保留字符"></a>1.2保留字符</h3><p>保留字不能用作常数或变数，或任何其他标识符名称。</p>
+<p>所有 Python 的关键字只包含小写字母。</p>
+<table>
+<thead>
+<tr>
+<th>and</th>
+<th>exec</th>
+<th>not</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>assert</strong></td>
+<td><strong>finally</strong></td>
+<td><strong>or</strong></td>
+</tr>
+<tr>
+<td><strong>break</strong></td>
+<td><strong>for</strong></td>
+<td><strong>pass</strong></td>
+</tr>
+<tr>
+<td><strong>class</strong></td>
+<td><strong>from</strong></td>
+<td><strong>print</strong></td>
+</tr>
+<tr>
+<td><strong>continue</strong></td>
+<td><strong>global</strong></td>
+<td><strong>raise</strong></td>
+</tr>
+<tr>
+<td><strong>def</strong></td>
+<td><strong>if</strong></td>
+<td><strong>return</strong></td>
+</tr>
+<tr>
+<td><strong>del</strong></td>
+<td><strong>import</strong></td>
+<td><strong>try</strong></td>
+</tr>
+<tr>
+<td><strong>elif</strong></td>
+<td><strong>in</strong></td>
+<td><strong>while</strong></td>
+</tr>
+<tr>
+<td><strong>else</strong></td>
+<td><strong>is</strong></td>
+<td><strong>with</strong></td>
+</tr>
+<tr>
+<td><strong>except</strong></td>
+<td><strong>lambda</strong></td>
+<td><strong>yield</strong></td>
+</tr>
+</tbody></table>
+<h3 id="1-3行和缩进"><a href="#1-3行和缩进" class="headerlink" title="1.3行和缩进"></a>1.3行和缩进</h3><p> Python 与其他语言最大的区别就是，Python 的代码块不使用大括号 <strong>{}</strong> 来控制类，函数以及其他逻辑判断。python 最具特色的就是用缩进来写模块。</p>
+<p>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
+<h3 id="1-4多行语句"><a href="#1-4多行语句" class="headerlink" title="1.4多行语句"></a>1.4多行语句</h3><p>Python语句中一般以新行作为语句的结束符。</p>
+<p>但是我们可以使用斜杠（ \）将一行的语句分为多行显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br></pre></td></tr></table></figure>
+
+<p>语句中包含 [], {} 或 () 括号就不需要使用多行连接符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">days = [&#x27;Monday&#x27;, &#x27;Tuesday&#x27;, &#x27;Wednesday&#x27;,</span><br><span class="line">        &#x27;Thursday&#x27;, &#x27;Friday&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5引号"><a href="#1-5引号" class="headerlink" title="1.5引号"></a>1.5引号</h3><p>Python 可以使用引号( <strong>‘</strong> )、双引号( <strong>“</strong> )、三引号( <strong>‘’’</strong> 或 <strong>“””</strong> ) 来表示字符串，引号的开始与结束必须是相同类型的。</p>
+<p>其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">word = &#x27;word&#x27;</span><br><span class="line">sentence = &quot;这是一个句子。&quot;</span><br><span class="line">paragraph = &quot;&quot;&quot;这是一个段落。</span><br><span class="line">包含了多个语句&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6注释"><a href="#1-6注释" class="headerlink" title="1.6注释"></a>1.6注释</h3><p>python中单行注释采用 <strong>#</strong> 开头。</p>
+<p>python 中多行注释使用三个单引号 <strong>‘’’</strong> 或三个双引号 **”””**。</p>
+<h3 id="1-7空行"><a href="#1-7空行" class="headerlink" title="1.7空行"></a>1.7空行</h3><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<p>记住：空行也是程序代码的一部分。</p>
+<h3 id="1-8等待用户输入"><a href="#1-8等待用户输入" class="headerlink" title="1.8等待用户输入"></a>1.8等待用户输入</h3><p>下面的程序执行后就会等待用户输入，按回车键后就会退出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raw_input(&quot;按下 enter 键退出，其他任意键显示...\n&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-9同一行显示多条语句"><a href="#1-9同一行显示多条语句" class="headerlink" title="1.9同一行显示多条语句"></a>1.9同一行显示多条语句</h3><p>Python可以在同一行中使用多条语句，语句之间使用分号(;)分割</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import sys; x = &#x27;runoob&#x27;; sys.stdout.write(x + &#x27;\n&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1输出"><a href="#2-1输出" class="headerlink" title="2.1输出"></a>2.1输出</h3><p>rint 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 <strong>,</strong></p>
+<p><strong>print</strong> x,<br><strong>print</strong> y,        &#x3D;&gt;xy</p>
+<h3 id="2-2多个语句构成代码组"><a href="#2-2多个语句构成代码组" class="headerlink" title="2.2多个语句构成代码组"></a>2.2多个语句构成代码组</h3><p>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+<h2 id="2-变量赋值"><a href="#2-变量赋值" class="headerlink" title="2.变量赋值"></a>2.变量赋值</h2><p>区分大小写</p>
+<p>Python 中的变量赋值不需要类型声明。</p>
+<p>每个变量在内存中创建，都包括变量的标识，名称和数据这些信息。</p>
+<p>每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
+<p>等号 <strong>&#x3D;</strong> 用来给变量赋值。</p>
+<p>等号 <strong>&#x3D;</strong> 运算符左边是一个变量名，等号 <strong>&#x3D;</strong> 运算符右边是存储在变量中的值</p>
+<h3 id="1-1多个变量赋值"><a href="#1-1多个变量赋值" class="headerlink" title="1.1多个变量赋值"></a>1.1多个变量赋值</h3><p>Python允许同时为多个变量赋值</p>
+<p>创建一个整型对象，值为1，三个变量被分配到相同的内存空间上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b = c = 1</span><br></pre></td></tr></table></figure>
+
+<p>也可以为多个对象指定多个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = 1, 2, &quot;john&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2标准数据类型"><a href="#1-2标准数据类型" class="headerlink" title="1.2标准数据类型"></a>1.2标准数据类型</h3><p>Python 定义了一些标准类型，用于存储各种类型的数据。</p>
+<p>五个标准的数据类型：</p>
+<ul>
+<li>Numbers（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Dictionary（字典）</li>
+<li>Set(集合)</li>
+</ul>
+<h3 id="1-3数字"><a href="#1-3数字" class="headerlink" title="1.3数字"></a>1.3数字</h3><p>数字数据类型用于存储数值。</p>
+<p>他们是不可改变的数据类型，这意味着改变数字数据类型会分配一个新的对象。</p>
+<p>当你指定一个值时，Number 对象就会被创建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var1 = 1</span><br><span class="line">var2 = 10</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用del语句删除一些对象的引用。</p>
+<p>del语句的语法是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del var1[,var2[,var3[....,varN]]]</span><br></pre></td></tr></table></figure>
+
+<p>可以通过使用del语句删除单个或多个对象的引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">del var</span><br><span class="line">del var_a, var_b</span><br></pre></td></tr></table></figure>
+
+<p>Python支持四种不同的数字类型：</p>
+<ul>
+<li><p>int（有符号整型）</p>
+</li>
+<li><p>long（长整型，也可以代表八进制和十六进制）</p>
+</li>
+<li><p>float（浮点型）</p>
+</li>
+<li><p>complex（复数）</p>
+<ul>
+<li><p>长整型也可以使用小写 l，但是还是建议您使用大写 L，避免与数字 1 混淆。Python使用 L 来显示长整型。</p>
+</li>
+<li><p>Python 还支持复数，复数由实数部分和虚数部分构成，可以用 a + bj,或者 complex(a,b) 表示， 复数的实部 a 和虚部 b 都是浮点型。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>ps</strong>：long 类型只存在于 Python2.X 版本中，在 2.2 以后的版本中，int 类型数据溢出后会自动转为long类型。在 Python3.X 版本中 long 类型被移除，使用 int 替代。</p>
+<h3 id="1-5切片"><a href="#1-5切片" class="headerlink" title="1.5切片"></a>1.5切片</h3><p><code>a[开始:结尾:步长](数字相隔空间为一步)</code></p>
+<p>1 2 3 4 5 6</p>
+<p>1-2-3-4-5-6</p>
+<p>例：</p>
+<p><code>a=&quot;23456&quot;</code></p>
+<p><code>print(a[1:2:3])</code></p>
+<p><code>3</code></p>
+<p><code>print([-3:-1:1])</code></p>
+<p><code>45</code></p>
+<h3 id="1-4字符串"><a href="#1-4字符串" class="headerlink" title="1.4字符串"></a>1.4字符串</h3><p>字符串或串(String)是由数字、字母、下划线组成的一串字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = &quot;a1a2···an&quot;   # n&gt;=0</span><br></pre></td></tr></table></figure>
+
+<p>它是编程语言中表示文本的数据类型。</p>
+<p>python的字串列表有2种取值顺序:</p>
+<ul>
+<li>从左到右索引默认0开始的，最大范围是字符串长度少1</li>
+<li>从右到左索引默认-1开始的，最大范围是字符串开头</li>
+</ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/11/python-string-slice.png" alt="img"></p>
+<p>如果你要实现从字符串中获取一段子字符串的话，可以使用 <strong>[头下标:尾下标]</strong> 来截取相应的字符串，其中下标是从 0 开始算起，可以是正数或负数，下标可以为空表示取到头或尾。</p>
+<p><strong>[头下标:尾下标]</strong> 获取的子字符串包含头下标的字符，但不包含尾下标的字符。</p>
+<p>当使用以冒号分隔的字符串，python 返回一个新的对象，结果包含了以这对偏移标识的连续的内容，左边的开始是包含了下边界。</p>
+<p>上面的结果包含了 <strong>s[1]</strong> 的值 b，而取到的最大范围不包括<strong>尾下标</strong>，就是 <strong>s[5]</strong> 的值 f。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/11/o99aU.png" alt="img"></p>
+<p>加号（+）是字符串连接运算符，星号（*）是重复操作。</p>
+<p><code>str = &#39;Hello World!&#39;</code></p>
+<p><code>print str           # 输出完整字符串</code> </p>
+<p><code>print str[0]        # 输出字符串中的第一个字符</code> </p>
+<p><code>print str[2:5]      # 输出字符串中第三个至第六个之间的字符串</code> </p>
+<p><code>print str[2:]       # 输出从第三个字符开始的字符串</code> </p>
+<p><code>print str * 2       # 输出字符串两次</code> </p>
+<p><code>print str + &quot;TEST&quot;  # 输出连接的字符串</code></p>
+<p>Python 列表截取可以接收第三个参数，参数作用是截取的步长，以下实例在索引 1 到索引 4 的位置并设置为步长为 2（间隔一个位置）来截取字符串：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/11/python_list_slice_2.png" alt="img"></p>
+<h4 id="1-1字符串拼接-x2F-x2F"><a href="#1-1字符串拼接-x2F-x2F" class="headerlink" title="1.1字符串拼接&#x2F;&#x2F; +"></a>1.1字符串拼接&#x2F;&#x2F; +</h4><h4 id="1-2字符串格式化处理"><a href="#1-2字符串格式化处理" class="headerlink" title="1.2字符串格式化处理"></a>1.2字符串格式化处理</h4><p>format（）</p>
+<p>print（“111{}11”.format(“55”)）</p>
+<p>1115511</p>
+<p>a&#x3D;“654{}615{}”</p>
+<p>print(a.format(“4”，“5”))</p>
+<p>ps:可用下标：</p>
+<p>a&#x3D;”654{1}615{0}”，format内的下标</p>
+<h5 id="1-1format进阶"><a href="#1-1format进阶" class="headerlink" title="1.1format进阶"></a>1.1format进阶</h5><p>{1：.2f} &#x2F;&#x2F;选第一个，保留两位小数</p>
+<p>format（a，b）默认第一个a</p>
+<p>{1：.2%} &#x2F;&#x2F;保留两位百分制</p>
+<h4 id="1-3find-amp-count"><a href="#1-3find-amp-count" class="headerlink" title="1.3find&amp;count"></a>1.3find&amp;count</h4><p>find（寻找字符，开始，结束）</p>
+<p>输出下标（多个输出第一个，没有输出-1）</p>
+<p>count（寻找字符，开始，结束）</p>
+<p>输出次数</p>
+<h4 id="1-4replace-amp-upper-amp-lower"><a href="#1-4replace-amp-upper-amp-lower" class="headerlink" title="1.4replace&amp;upper&amp;lower"></a>1.4replace&amp;upper&amp;lower</h4><p>replace(查找字符，替换字符，替换个数（从左至右）)</p>
+<p>upper() &#x2F;&#x2F;将小写转大写</p>
+<p>lower（） &#x2F;&#x2F;将大写转小写</p>
+<h4 id="1-5split-amp-strip"><a href="#1-5split-amp-strip" class="headerlink" title="1.5split&amp;strip"></a>1.5split&amp;strip</h4><p>split(在该字符位置进行分割（替换），分割次数（从左至右）)</p>
+<p>strip（） &#x2F;&#x2F;去除字符串收尾空格</p>
+<p>strip（去除该字符）</p>
+<h4 id="1-6传统格式化-amp-F（f）表达式"><a href="#1-6传统格式化-amp-F（f）表达式" class="headerlink" title="1.6传统格式化&amp;F（f）表达式"></a>1.6传统格式化&amp;F（f）表达式</h4><p>%s  &#x2F;&#x2F;占位（替换）</p>
+<p>%d  &#x2F;&#x2F;数值占位（替换）</p>
+<p>%f  &#x2F;&#x2F;浮点占位（替换）</p>
+<p>print(f(a{ds}ada{ad}))  &#x2F;&#x2F;直接带入变量</p>
+<h3 id="1-5列表"><a href="#1-5列表" class="headerlink" title="1.5列表"></a>1.5列表</h3><p>List（列表） 是 Python 中使用最频繁的数据类型。</p>
+<p>列表可以完成大多数集合类的数据结构实现。它支持字符，数字，字符串甚至可以包含列表（即嵌套）。</p>
+<p>列表用 <strong>[ ]</strong> 标识，是 python 最通用的复合数据类型。</p>
+<p>列表中值的切割也可以用到变量 <strong>[头下标:尾下标]</strong> ，就可以截取相应的列表，从左到右索引默认 0 开始，从右到左索引默认 -1 开始，下标可以为空表示取到头或尾。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/08/list_slicing1_new1.png" alt="img"></p>
+<p>加号 <strong>+</strong> 是列表连接运算符，星号 ***** 是重复操作。</p>
+<p><code>list = [ &#39;runoob&#39;, 786 , 2.23, &#39;john&#39;, 70.2 ]</code> </p>
+<p><code>tinylist = [123, &#39;john&#39;]  print list               # 输出完整列表</code> </p>
+<p><code>print list[0]            # 输出列表的第一个元素</code> </p>
+<p><code>print list[1:3]          # 输出第二个至第三个元素</code>  </p>
+<p><code>print list[2:]           # 输出从第三个开始至列表末尾的所有元素</code></p>
+<p><code>print tinylist * 2       # 输出列表两次</code> </p>
+<p><code>print list + tinylist    # 打印组合的列表</code></p>
+<h4 id="1-1更换"><a href="#1-1更换" class="headerlink" title="1.1更换"></a>1.1更换</h4><p>list_1&#x3D;[1,2,3,0]</p>
+<p>list_1[1]&#x3D;5</p>
+<p>1530</p>
+<h4 id="1-2倒序"><a href="#1-2倒序" class="headerlink" title="1.2倒序"></a>1.2倒序</h4><p>list_1[::-1]</p>
+<h4 id="1-3删除"><a href="#1-3删除" class="headerlink" title="1.3删除"></a>1.3删除</h4><p>a&#x3D;[1,2,3]</p>
+<p>del a  &#x2F;&#x2F;删除列表</p>
+<p>del a[1] &#x2F;&#x2F;删除列表固定位置</p>
+<h4 id="1-4添加"><a href="#1-4添加" class="headerlink" title="1.4添加"></a>1.4添加</h4><p>a&#x3D;[1,2,3,]</p>
+<p>a.append(6)</p>
+<p>1,2,3,6</p>
+<h4 id="1-5插入-amp-清空"><a href="#1-5插入-amp-清空" class="headerlink" title="1.5插入&amp;清空"></a>1.5插入&amp;清空</h4><p>a.insert(1.66)  &#x2F;&#x2F;在下标为1的位置插入66</p>
+<p>a.claer</p>
+<h4 id="1-6移除"><a href="#1-6移除" class="headerlink" title="1.6移除"></a>1.6移除</h4><p>a.remove（移除字符串）  &#x2F;&#x2F;有重复移除第一个</p>
+<p>a.pop(1)   &#x2F;下标，要移除的数据（选中的数据）</p>
+<h4 id="1-7index-amp-reverse"><a href="#1-7index-amp-reverse" class="headerlink" title="1.7index&amp;reverse"></a>1.7index&amp;reverse</h4><p>a.index(查找字符，起始，结束)</p>
+<p>a.reverse  &#x2F;&#x2F;倒序</p>
+<h4 id="1-8extend"><a href="#1-8extend" class="headerlink" title="1.8extend"></a>1.8extend</h4><p>a.extend([1,2])  &#x2F;&#x2F;添加到列表（内）后面</p>
+<p>ps:与加号的区别，改变原列表，加号返回新列表（占用内存空间）</p>
+<h4 id="1-9copy"><a href="#1-9copy" class="headerlink" title="1.9copy"></a>1.9copy</h4><p>a.copy()  &#x2F;&#x2F;复制一个新的列表</p>
+<h4 id="2-1sort"><a href="#2-1sort" class="headerlink" title="2.1sort"></a>2.1sort</h4><p>a.sort  &#x2F;&#x2F;根据首字母排序，相同后延，数字则按大小，如果多种数据根据ascii码排序</p>
+<p>a.sort(reverse&#x3D;Ture)  &#x2F;&#x2F;倒序</p>
+<h4 id="2-2count"><a href="#2-2count" class="headerlink" title="2.2count"></a>2.2count</h4><p>a.count(查找数据)  &#x2F;&#x2F;数据出现次数</p>
+<h3 id="1-6元组"><a href="#1-6元组" class="headerlink" title="1.6元组"></a>1.6元组</h3><p>元组是另一个数据类型，类似于 List（列表）。</p>
+<p>元组用 <strong>()</strong> 标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。</p>
+<p><code>tuple = ( &#39;runoob&#39;, 786 , 2.23, &#39;john&#39;, 70.2 )</code> </p>
+<p><code>tinytuple = (123, &#39;john&#39;)  print tuple               # 输出完整元组</code> </p>
+<p><code>print tuple[0]            # 输出元组的第一个元素</code> </p>
+<p><code>print tuple[1:3]          # 输出第二个至第四个（不包含）的元素</code>  </p>
+<p><code>print tuple[2:]           # 输出从第三个开始至列表末尾的所有元素</code> </p>
+<p><code>print tinytuple * 2       # 输出元组两次</code> </p>
+<p><code>print tuple + tinytuple   # 打印组合的元组</code></p>
+<p>对元组的更新操作是无效的，因为元组不允许更新，而列表是允许更新的：</p>
+<p>元组中的列表值可更改</p>
+<p>元组可无括号</p>
+<p>单个数据需添加，号</p>
+<p>a&#x3D;(1,)</p>
+<h4 id="1-1最大-amp-最小输出"><a href="#1-1最大-amp-最小输出" class="headerlink" title="1.1最大&amp;最小输出"></a>1.1最大&amp;最小输出</h4><p>max（）   &#x2F;&#x2F;最大值 含字符会转化成acsii码比较</p>
+<p>min（）   &#x2F;&#x2F;最小值 含字符会转化成acsii码比较</p>
+<h3 id="1-7字典"><a href="#1-7字典" class="headerlink" title="1.7字典"></a>1.7字典</h3><p>字典(dictionary)是除列表以外python之中最灵活的内置数据结构类型。列表是有序的对象集合，字典是无序的对象集合。</p>
+<p>两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。</p>
+<p>字典用”{ }”标识。字典由索引(key)和它对应的值value组成。</p>
+<p><code>dict = &#123;&#125; 表达为（空）字典</code> </p>
+<p><code>dict[&#39;one&#39;] = &quot;This is one&quot;</code> </p>
+<p><code>dict[2] = &quot;This is two&quot;  t</code></p>
+<p><code>inydict = &#123;&#39;name&#39;: &#39;runoob&#39;,&#39;code&#39;:6734, &#39;dept&#39;: &#39;sales&#39;&#125;</code>   </p>
+<p><code>print dict[&#39;one&#39;]          # 输出键为&#39;one&#39; 的值</code> </p>
+<p><code>print dict[2]              # 输出键为 2 的值</code> </p>
+<p><code>print tinydict             # 输出完整的字典</code> </p>
+<p><code>print tinydict.keys()      # 输出所有键</code> </p>
+<p><code>print tinydict.values()    # 输出所有值</code></p>
+<p>a&#x3D;dict(([1,2],[3,4]))</p>
+<p>{‘1’:’2’,’3’:’4’}</p>
+<p>a&#x3D;set()  &#x2F;&#x2F;空集合</p>
+<h4 id="1-1增-amp-删-amp-改-amp-查"><a href="#1-1增-amp-删-amp-改-amp-查" class="headerlink" title="1.1增&amp;删&amp;改&amp;查"></a>1.1增&amp;删&amp;改&amp;查</h4><p>增加：</p>
+<p>a&#x3D;{1:2,3:4}</p>
+<p>a[5]&#x3D;6</p>
+<p>{‘1’：‘2’，‘3’：‘4’，‘5’：‘6’}</p>
+<p>删除：</p>
+<p>del a[键]</p>
+<p>修改：</p>
+<p>a[键]&#x3D;值</p>
+<p>查找：</p>
+<p>a[键] 直接输出</p>
+<h4 id="1-2get-amp-keys"><a href="#1-2get-amp-keys" class="headerlink" title="1.2get&amp;keys"></a>1.2get&amp;keys</h4><p>b&#x3D;a.get(键)  &#x2F;&#x2F;键不存在返回none</p>
+<p>不存在默认显示</p>
+<p>b&#x3D;a.get(键，显示)</p>
+<p>a.keys()  &#x2F;&#x2F;获取键，只能获取最外层的键</p>
+<h4 id="1-3items-amp-values"><a href="#1-3items-amp-values" class="headerlink" title="1.3items&amp;values"></a>1.3items&amp;values</h4><p>a.items()   &#x2F;&#x2F;获取键值对</p>
+<p>a.values（） &#x2F;&#x2F;获取值</p>
+<h4 id="1-4clear-amp-copy"><a href="#1-4clear-amp-copy" class="headerlink" title="1.4clear&amp;copy"></a>1.4clear&amp;copy</h4><p>a.clear() &#x2F;&#x2F;清空</p>
+<p>a.copy() &#x2F;&#x2F;复制一个新字典</p>
+<h4 id="1-5fromkeys-amp-pop"><a href="#1-5fromkeys-amp-pop" class="headerlink" title="1.5fromkeys&amp;pop"></a>1.5fromkeys&amp;pop</h4><p>a.fromkeys(（），（）)  &#x2F;&#x2F;创建一个新字典</p>
+<p>{（）：（），（）：（）}</p>
+<p>a.pop(键)  &#x2F;&#x2F;移除键返回值</p>
+<h4 id="1-6popitem-amp-setdeffault"><a href="#1-6popitem-amp-setdeffault" class="headerlink" title="1.6popitem&amp;setdeffault"></a>1.6popitem&amp;setdeffault</h4><p>a.popitem()  &#x2F;&#x2F;删除最后一项并将其返回列表</p>
+<p>a.setdefault(键，值)  &#x2F;&#x2F;添加但不能修改</p>
+<p>ps：相同键输出最后一个</p>
+<h4 id="1-7update"><a href="#1-7update" class="headerlink" title="1.7update"></a>1.7update</h4><p>a.update(b)   &#x2F;&#x2F;相同键b字典更新a字典，不同键添加</p>
+<h3 id="1-8in-amp-not-in-is-amp-not-is"><a href="#1-8in-amp-not-in-is-amp-not-is" class="headerlink" title="1.8in&amp;not in\is&amp;not is"></a>1.8in&amp;not in\is&amp;not is</h3><p>判断字符串是否存在与另一字符串中，若在字典中则判断键</p>
+<p>判断两个字符串是否为同一对象，字典，列表，集合表面相同，但不会被判断为相同</p>
+<h3 id="1-8集合"><a href="#1-8集合" class="headerlink" title="1.8集合"></a>1.8集合</h3><p>a&#x3D; set（“123”）&#x2F;&#x2F;{‘1’，‘2’，‘3’}</p>
+<p>用集合输出字典只会输出键</p>
+<p>a&#x3D;{}</p>
+<p>字典&#x2F;列表不能放入{}中</p>
+<p>直接输出set（）去重，字典只针对键</p>
+<h4 id="1-1添加-amp-合并"><a href="#1-1添加-amp-合并" class="headerlink" title="1.1添加&amp;合并"></a>1.1添加&amp;合并</h4><p>a.add(添加数据)</p>
+<p>a.update(合并的集合)  &#x2F;&#x2F;随机排列，合并的集合不会改变</p>
+<h4 id="1-2删除"><a href="#1-2删除" class="headerlink" title="1.2删除"></a>1.2删除</h4><p>a.remove(删除的数据)  &#x2F;&#x2F;不存在会报错</p>
+<p>a.pop()  &#x2F;&#x2F;随机删除</p>
+<p>a.discard(删除的数据) &#x2F;&#x2F;不存在不会报错</p>
+<h4 id="1-3交集并集"><a href="#1-3交集并集" class="headerlink" title="1.3交集并集"></a>1.3交集并集</h4><p>交集：&amp;</p>
+<p>并集：|</p>
+<h3 id="1-8数据类型转换"><a href="#1-8数据类型转换" class="headerlink" title="1.8数据类型转换"></a>1.8数据类型转换</h3><p>有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。</p>
+<p>以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。</p>
+<p>检测数据类型：type()</p>
+<p>转换布尔时，容器空数据为false，有数据为true,数字型时0&#x2F;0.0为flase，其它为true</p>
+<p>数字型无法转列表，集合</p>
+<p>字典转列只保留键</p>
+<table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x [,base])</td>
+<td>将x转换为一个整数</td>
+</tr>
+<tr>
+<td>long(x [,base] )</td>
+<td>将x转换为一个长整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换到一个浮点数</td>
+</tr>
+<tr>
+<td>complex(real [,imag])</td>
+<td>创建一个复数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td>repr(x)</td>
+<td>将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td>eval(str)</td>
+<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td>tuple(s)</td>
+<td>将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td>list(s)</td>
+<td>将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td>set(s)</td>
+<td>转换为可变集合</td>
+</tr>
+<tr>
+<td>dict(d)</td>
+<td>创建一个字典。d 必须是一个序列 (key,value)元组</td>
+</tr>
+<tr>
+<td>frozenset(s)</td>
+<td>转换为不可变集合</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td>unichr(x)</td>
+<td>将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody></table>
+<h3 id="1-9判断对象类型"><a href="#1-9判断对象类型" class="headerlink" title="1.9判断对象类型"></a>1.9判断对象类型</h3><p>isinstance（）  &#x2F;&#x2F;判断对象是否为已知类型，该函数返回值为布尔型</p>
+<h4 id="1-1语法"><a href="#1-1语法" class="headerlink" title="1.1语法"></a>1.1语法</h4><p>isinstance(对象，对象类型)</p>
+<h2 id="3-运算符"><a href="#3-运算符" class="headerlink" title="3.运算符"></a>3.运算符</h2><h3 id="1-1支持的运算符"><a href="#1-1支持的运算符" class="headerlink" title="1.1支持的运算符"></a>1.1支持的运算符</h3><p>Python语言支持以下类型的运算符:</p>
+<ul>
+<li>算术运算符</li>
+<li>比较（关系）运算符</li>
+<li>赋值运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>成员运算符</li>
+<li>身份运算符</li>
+<li>运算符优先级</li>
+</ul>
+<h3 id="1-2算数运算符"><a href="#1-2算数运算符" class="headerlink" title="1.2算数运算符"></a>1.2算数运算符</h3><table>
+<thead>
+<tr>
+<th><strong>运算符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>除</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂</td>
+</tr>
+<tr>
+<td>&#x2F;&#x2F;</td>
+<td>取整除 - 返回商的整数部分（向下取整）</td>
+</tr>
+</tbody></table>
+<p>ps：Python2.x 里，整数除整数，只能得出整数。如果要得到小数部分，把其中一个数改成浮点数即可。</p>
+<h3 id="1-3比较运算符"><a href="#1-3比较运算符" class="headerlink" title="1.3比较运算符"></a>1.3比较运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>不等于（python3已废弃）</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>小于等于</td>
+</tr>
+</tbody></table>
+<h3 id="1-4赋值运算符"><a href="#1-4赋值运算符" class="headerlink" title="1.4赋值运算符"></a>1.4赋值运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td>赋值运算符</td>
+</tr>
+<tr>
+<td>+&#x3D;</td>
+<td>加法赋值运算符</td>
+</tr>
+<tr>
+<td>-&#x3D;</td>
+<td>减法赋值运算符</td>
+</tr>
+<tr>
+<td>*&#x3D;</td>
+<td>乘法赋值运算符</td>
+</tr>
+<tr>
+<td>&#x2F;&#x3D;</td>
+<td>除法赋值运算符</td>
+</tr>
+<tr>
+<td>%&#x3D;</td>
+<td>取余赋值运算符</td>
+</tr>
+<tr>
+<td>**&#x3D;</td>
+<td>幂赋值运算符</td>
+</tr>
+<tr>
+<td>&#x2F;&#x2F;&#x3D;</td>
+<td>取整除赋值运算符</td>
+</tr>
+</tbody></table>
+<h3 id="1-5位运算符"><a href="#1-5位运算符" class="headerlink" title="1.5位运算符"></a>1.5位运算符</h3><h2 id="4-语句"><a href="#4-语句" class="headerlink" title="4.语句"></a>4.语句</h2><h3 id="1-1条件语句"><a href="#1-1条件语句" class="headerlink" title="1.1条件语句"></a>1.1条件语句</h3><h4 id="1-1if"><a href="#1-1if" class="headerlink" title="1.1if"></a>1.1if</h4><p>elif看满足哪一个，输出哪一个</p>
+<p>if 3&gt;6:</p>
+<p>​	print()</p>
+<p>elif 4&gt;1:</p>
+<p>​	print()</p>
+<p>elif 5&gt;6:</p>
+<p>​	print()</p>
+<p>else：  &#x2F;&#x2F;当条件不满足时</p>
+<p>​	print()</p>
+<h3 id="1-2循环语句"><a href="#1-2循环语句" class="headerlink" title="1.2循环语句"></a>1.2循环语句</h3><h4 id="1-1for"><a href="#1-1for" class="headerlink" title="1.1for"></a>1.1for</h4><p>遍历</p>
+<p>for i in [1,2,3,0]:</p>
+<p>​	print(i)</p>
+<p>遍历数字 range（开始，结束，步长）</p>
+<p>遍历字典只能获取键</p>
+<h4 id="1-2while"><a href="#1-2while" class="headerlink" title="1.2while"></a>1.2while</h4><p>while Ture:   &#x2F;&#x2F;判断为真循环</p>
+<p>​	print()   &#x2F;&#x2F;无限循环</p>
+<h4 id="1-3关键字"><a href="#1-3关键字" class="headerlink" title="1.3关键字"></a>1.3关键字</h4><p>break &#x2F;&#x2F;跳出循环</p>
+<p>continue &#x2F;&#x2F;跳过当前循环块中的剩余语句，继续循环</p>
+<p>pass &#x2F;&#x2F;空语句，为了保持程序结构完整性</p>
+<p>return &#x2F;&#x2F;返回处理好的结果，返回值是一个元组</p>
+<h2 id="5-函数"><a href="#5-函数" class="headerlink" title="5.函数"></a>5.函数</h2><h3 id="1-1关键字"><a href="#1-1关键字" class="headerlink" title="1.1关键字"></a>1.1关键字</h3><p>def abc():</p>
+<p>​	print()</p>
+<h3 id="1-2调用"><a href="#1-2调用" class="headerlink" title="1.2调用"></a>1.2调用</h3><p>先定义再调用</p>
+<h3 id="1-3传参"><a href="#1-3传参" class="headerlink" title="1.3传参"></a>1.3传参</h3><p>def a(b):</p>
+<p>​	print(b)</p>
+<p>b(“222”)</p>
+<p>b(“333”)</p>
+<p>可重复调用</p>
+<p>可传任意类型</p>
+<p>命名关键字传参</p>
+<h3 id="1-4参数"><a href="#1-4参数" class="headerlink" title="1.4参数"></a>1.4参数</h3><p>默认传第一次 </p>
+<p>与定义的函数个数对应</p>
+<p>*参数 &#x2F;&#x2F;元组</p>
+<p>直接打印*参数 &#x2F;&#x2F;被当成参数</p>
+<p>**参数 &#x2F;&#x2F;字典</p>
+<h3 id="1-5拆包"><a href="#1-5拆包" class="headerlink" title="1.5拆包"></a>1.5拆包</h3><p>a&#x3D;”123”</p>
+<p>def b(c,d,f):</p>
+<p>​	print(c)</p>
+<p>​	print(d)</p>
+<p>​	print(f)</p>
+<p>b(*a)</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>所有类型都可拆包，字典拆键，字典拆值为**a</p>
+<p><strong>字典拆值需将参数对应键</strong></p>
+<p>a&#x3D;{</p>
+<p>​	1:12</p>
+<p>​	2:45</p>
+<p>​	3:89</p>
+<p>}</p>
+<p>def b(1,2,3):</p>
+<p>​	print(1)</p>
+<p>​	print(2)</p>
+<p>​	print(3)</p>
+<p>b(*a)</p>
+<p>12</p>
+<p>45</p>
+<p>89</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/10/26/python2/" rel="prev" title="python进阶——正则表达式">
+                python进阶——正则表达式 <i class="fas fa-angle-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+          
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      
+      
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <img class="site-author-image scaleup" itemprop="image"
+              src="/images/Anya.png"
+              alt="" />
+            <div class="site-author-info">
+              <p class="site-author-name" itemprop="name">aoman</p>
+              <p class="site-description" itemprop="description">生活无趣搞点<a target="_blank" rel="noopener" href="https://www.douyin.com/">好看的</a><br>
+每天变强一点点<br>
+生当做人杰，死亦为鬼雄。<br>
+天行健，君子以自强不息。<br>
+燕雀安知鸿鹄之志？<br>
+老骥伏枥，志在千里；烈士暮年，壮心不已。<br>
+天生我材必有用。<br>
+千磨万击还坚劲，任尔东西南北风。<br>
+</p>
+            </div>
+          </div>
+
+          <div class="links-of-author">
+            
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://twitter.com/" target="_blank" title="Twitter">
+                       <i class="fab fa-twitter" style="color: #2FB0EC"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://github.com/aomanbuaoman" target="_blank" title="GitHub">
+                       <i class="fab fa-github" style="color: #000"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="javascript:;" target="_blank" title="Edit">
+                       <i style="fill: #666"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16"><path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/></svg></i>
+                      <span> emmm </span>
+               </a>
+                </span>
+              
+            
+          </div>
+
+          <div class="des-of-author">
+              <div class="des-of-author-nav">
+                
+              </div>
+              <div class="des-of-author-panel">
+                
+              </div>
+          </div>
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-number">1.</span> <span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E4%BF%9D%E7%95%99%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2保留字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E8%A1%8C%E5%92%8C%E7%BC%A9%E8%BF%9B"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3行和缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%A4%9A%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4多行语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%BC%95%E5%8F%B7"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E7%A9%BA%E8%A1%8C"><span class="nav-number">1.1.7.</span> <span class="nav-text">1.7空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E7%AD%89%E5%BE%85%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="nav-number">1.1.8.</span> <span class="nav-text">1.8等待用户输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9%E5%90%8C%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA%E5%A4%9A%E6%9D%A1%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.1.9.</span> <span class="nav-text">1.9同一行显示多条语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E8%BE%93%E5%87%BA"><span class="nav-number">1.1.10.</span> <span class="nav-text">2.1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E5%A4%9A%E4%B8%AA%E8%AF%AD%E5%8F%A5%E6%9E%84%E6%88%90%E4%BB%A3%E7%A0%81%E7%BB%84"><span class="nav-number">1.1.11.</span> <span class="nav-text">2.2多个语句构成代码组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="nav-number">1.2.</span> <span class="nav-text">2.变量赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1多个变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2标准数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E6%95%B0%E5%AD%97"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.3数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%88%87%E7%89%87"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.5切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.5.</span> <span class="nav-text">1.4字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5-x2F-x2F"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">1.1字符串拼接&#x2F;&#x2F; +</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">1.2字符串格式化处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1format%E8%BF%9B%E9%98%B6"><span class="nav-number">1.2.5.2.1.</span> <span class="nav-text">1.1format进阶</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3find-amp-count"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">1.3find&amp;count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4replace-amp-upper-amp-lower"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">1.4replace&amp;upper&amp;lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5split-amp-strip"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">1.5split&amp;strip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E4%BC%A0%E7%BB%9F%E6%A0%BC%E5%BC%8F%E5%8C%96-amp-F%EF%BC%88f%EF%BC%89%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.2.5.6.</span> <span class="nav-text">1.6传统格式化&amp;F（f）表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%88%97%E8%A1%A8"><span class="nav-number">1.2.6.</span> <span class="nav-text">1.5列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%9B%B4%E6%8D%A2"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">1.1更换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%80%92%E5%BA%8F"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">1.2倒序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">1.3删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E6%B7%BB%E5%8A%A0"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">1.4添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E6%8F%92%E5%85%A5-amp-%E6%B8%85%E7%A9%BA"><span class="nav-number">1.2.6.5.</span> <span class="nav-text">1.5插入&amp;清空</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E7%A7%BB%E9%99%A4"><span class="nav-number">1.2.6.6.</span> <span class="nav-text">1.6移除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7index-amp-reverse"><span class="nav-number">1.2.6.7.</span> <span class="nav-text">1.7index&amp;reverse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8extend"><span class="nav-number">1.2.6.8.</span> <span class="nav-text">1.8extend</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9copy"><span class="nav-number">1.2.6.9.</span> <span class="nav-text">1.9copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1sort"><span class="nav-number">1.2.6.10.</span> <span class="nav-text">2.1sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2count"><span class="nav-number">1.2.6.11.</span> <span class="nav-text">2.2count</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%85%83%E7%BB%84"><span class="nav-number">1.2.7.</span> <span class="nav-text">1.6元组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%9C%80%E5%A4%A7-amp-%E6%9C%80%E5%B0%8F%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">1.1最大&amp;最小输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E5%AD%97%E5%85%B8"><span class="nav-number">1.2.8.</span> <span class="nav-text">1.7字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%A2%9E-amp-%E5%88%A0-amp-%E6%94%B9-amp-%E6%9F%A5"><span class="nav-number">1.2.8.1.</span> <span class="nav-text">1.1增&amp;删&amp;改&amp;查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2get-amp-keys"><span class="nav-number">1.2.8.2.</span> <span class="nav-text">1.2get&amp;keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3items-amp-values"><span class="nav-number">1.2.8.3.</span> <span class="nav-text">1.3items&amp;values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4clear-amp-copy"><span class="nav-number">1.2.8.4.</span> <span class="nav-text">1.4clear&amp;copy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5fromkeys-amp-pop"><span class="nav-number">1.2.8.5.</span> <span class="nav-text">1.5fromkeys&amp;pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6popitem-amp-setdeffault"><span class="nav-number">1.2.8.6.</span> <span class="nav-text">1.6popitem&amp;setdeffault</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7update"><span class="nav-number">1.2.8.7.</span> <span class="nav-text">1.7update</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8in-amp-not-in-is-amp-not-is"><span class="nav-number">1.2.9.</span> <span class="nav-text">1.8in&amp;not in\is&amp;not is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E9%9B%86%E5%90%88"><span class="nav-number">1.2.10.</span> <span class="nav-text">1.8集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%B7%BB%E5%8A%A0-amp-%E5%90%88%E5%B9%B6"><span class="nav-number">1.2.10.1.</span> <span class="nav-text">1.1添加&amp;合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.10.2.</span> <span class="nav-text">1.2删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86"><span class="nav-number">1.2.10.3.</span> <span class="nav-text">1.3交集并集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.11.</span> <span class="nav-text">1.8数据类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.12.</span> <span class="nav-text">1.9判断对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.12.1.</span> <span class="nav-text">1.1语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">3.运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%94%AF%E6%8C%81%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.1支持的运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.2算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.4赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.5位运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.</span> <span class="nav-text">4.语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.1条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1if"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">1.1if</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.2循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1for"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">1.1for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2while"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">1.2while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">1.3关键字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">5.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.1关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E8%B0%83%E7%94%A8"><span class="nav-number">1.5.2.</span> <span class="nav-text">1.2调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E4%BC%A0%E5%8F%82"><span class="nav-number">1.5.3.</span> <span class="nav-text">1.3传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%82%E6%95%B0"><span class="nav-number">1.5.4.</span> <span class="nav-text">1.4参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E6%8B%86%E5%8C%85"><span class="nav-number">1.5.5.</span> <span class="nav-text">1.5拆包</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-image">
+        <img src="/images/footer.png">
+      </div>
+      <div class="footer-inner">
+        <p>博客已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+
+
+<p>© <span itemprop="copyrightYear">2022</span> aoman.
+    
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    
+    
+    Theme By <a href="https://github.com/XiangNorth/hexo-theme-anya" target="_blank" class="external" rel="nofollow">Anya</a>
+    
+    
+     v1.0.2.
+     
+     
+    <a href="/sitemap.xml" target="_blank">站点地图</a>.
+    
+</p>
+<p>Made with <i class="fas fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">John Doe</span>. </p>
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <img src="/images/scroll.png">
+      </div>
+    
+
+  </div>
+
+  <script type="text/javascript" src="/js/anya.min.js?v=1.0.2"></script>
+
+  
+
+  
+
+  
+  
+</body>
+</html>
