@@ -669,6 +669,406 @@
   
 
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/python3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Anya.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoman">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link scaleup" href="/2022/10/26/python3/" itemprop="url">python基础爬虫--代理池</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T20:12:17+08:00">2022-10-26</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> requests <span class="keyword">import</span> adapters</span><br><span class="line"></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_66</span>(<span class="params">data_text1</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS_66</span><br><span class="line">    IPZ_66 = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td&gt;(\d+.\d+.\d+.\d+)&lt;/td&gt;&lt;td&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS_66 = re.findall(IPZ_66,data_text1)</span><br><span class="line">    <span class="keyword">return</span> IPS_66</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">port_p</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> DKS</span><br><span class="line">    DKZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;PORT&quot;&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    DKS = re.findall(DKZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> DKS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_ip</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS</span><br><span class="line">    IPZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;IP&quot;&gt;(\d+\.\d+\.\d+\.\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS = re.findall(IPZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> IPS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pinjie</span>():</span><br><span class="line">    <span class="comment"># 功能需求：实现两个IPS和DKS的拼接，结果是IPS:DSK</span></span><br><span class="line">    ip_z= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(IPS)):</span><br><span class="line">        ip_z.append(IPS[i]+<span class="string">&#x27;:&#x27;</span>+DKS[i])</span><br><span class="line">    <span class="comment"># 输出结果  [&#x27;xxxx:xxxx&#x27;]</span></span><br><span class="line">    dl_write(ip_z)</span><br><span class="line">    <span class="keyword">return</span> ip_z</span><br><span class="line"><span class="comment"># def merge_list(list1,list2):</span></span><br><span class="line"><span class="comment">#      python 有个拉链函数， zip(list1,list2),可以实现合并功能</span></span><br><span class="line"><span class="comment">#     print(list(zip(list1,list2)))</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dl_write</span>(<span class="params">ip_z</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> DIP <span class="keyword">in</span> ip_z:</span><br><span class="line">            f.write(DIP+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    test_corr()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_corr</span>():</span><br><span class="line">    corr=[]</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="comment"># 设置重连次数</span></span><br><span class="line">                adapters.DEFAULT_RETRIES = <span class="number">3</span></span><br><span class="line">                <span class="comment"># IP = random.choice(IPAgents)</span></span><br><span class="line">                proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">                <span class="comment"># thisIP = &quot;&quot;.join(IP.split(&quot;:&quot;)[0:1])</span></span><br><span class="line">                <span class="comment"># print(thisIP)</span></span><br><span class="line">                res = requests.get(url=<span class="string">&quot;http://icanhazip.com/&quot;</span>, timeout=<span class="number">2</span>, proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">                <span class="keyword">if</span> (res.status_code == <span class="number">200</span>):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;有效&quot;</span>)</span><br><span class="line">                    corr.append(i)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;无效&quot;</span>)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br><span class="line">    text_qualified(corr)</span><br><span class="line">    <span class="keyword">return</span> corr         </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text_qualified</span>(<span class="params">corr</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> corr:</span><br><span class="line">            f.write(i)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ipyc</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">            data = requests.get(<span class="string">&#x27;https://free.kuaidaili.com/free/inha/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_1=requests.get(<span class="string">&#x27;http://www.66ip.cn/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_text1=data_1.text</span><br><span class="line">            data_text = data.text</span><br><span class="line">            <span class="keyword">if</span> data.status_code == <span class="number">200</span>:</span><br><span class="line">                port_p(data_text)</span><br><span class="line">                ip_ip(data_text)</span><br><span class="line">                pinjie()</span><br><span class="line">                ip_66(data_text1)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">ipyc()</span><br><span class="line">    </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-button text-center">
+              <a class="btn scaleup" href="/2022/10/26/python3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">10月</div>
+			<div class="post-day">26</div>
+	</div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/%E5%89%8D%E7%AB%AF1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Anya.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoman">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link scaleup" href="/2022/10/26/%E5%89%8D%E7%AB%AF1/" itemprop="url">HTML基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T20:12:17+08:00">2022-10-26</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        
+          
+            <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="1-html"><a href="#1-html" class="headerlink" title="1.html"></a>1.html</h2><h3 id="1-1定义"><a href="#1-1定义" class="headerlink" title="1.1定义"></a>1.1定义</h3><p>超文本标记语言</p>
+<h3 id="1-2标准"><a href="#1-2标准" class="headerlink" title="1.2标准"></a>1.2标准</h3><p>文档声明</p>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p>字符集</p>
+<p><code>&lt;meta charset=&quot;utf-8&quot; /&gt;</code></p>
+<h4 id="1-2-1结构"><a href="#1-2-1结构" class="headerlink" title="1.2.1结构"></a>1.2.1结构</h4><p>网页元素的整理分类  &#x2F;&#x2F;html</p>
+<h4 id="1-2-2表现"><a href="#1-2-2表现" class="headerlink" title="1.2.2表现"></a>1.2.2表现</h4><p>网页元素的版式，颜色，样式  &#x2F;&#x2F;css</p>
+<h4 id="1-2-3行为"><a href="#1-2-3行为" class="headerlink" title="1.2.3行为"></a>1.2.3行为</h4><p>网页模型的定义与交互的编写  &#x2F;&#x2F;js </p>
+<h3 id="1-3语法"><a href="#1-3语法" class="headerlink" title="1.3语法"></a>1.3语法</h3><h4 id="1-1标签"><a href="#1-1标签" class="headerlink" title="1.1标签"></a>1.1标签</h4><h5 id="1-1单标签-amp-双标签"><a href="#1-1单标签-amp-双标签" class="headerlink" title="1.1单标签&amp;双标签"></a>1.1单标签&amp;双标签</h5><p><code>&lt;title&gt;xxx&lt;/title&gt;</code>  &#x2F;&#x2F;双标签</p>
+<p><code>&lt;br/&gt;</code>   &#x2F;&#x2F;单标签</p>
+<h5 id="1-2文本标签"><a href="#1-2文本标签" class="headerlink" title="1.2文本标签"></a>1.2文本标签</h5><h6 id="1-1标题标签"><a href="#1-1标题标签" class="headerlink" title="1.1标题标签"></a>1.1标题标签</h6><p><code>&lt;hx&gt;</code></p>
+<h6 id="1-2段落标签"><a href="#1-2段落标签" class="headerlink" title="1.2段落标签"></a>1.2段落标签</h6><p><code>&lt;p&gt;</code>  &#x2F;&#x2F;html编码可实体</p>
+<h6 id="1-3分割线标签"><a href="#1-3分割线标签" class="headerlink" title="1.3分割线标签"></a>1.3分割线标签</h6><p><code>&lt;hr&gt;</code></p>
+<h6 id="1-4换行标签"><a href="#1-4换行标签" class="headerlink" title="1.4换行标签"></a>1.4换行标签</h6><p><code>&lt;br&gt;</code></p>
+<h6 id="1-5斜体-amp-强调斜体"><a href="#1-5斜体-amp-强调斜体" class="headerlink" title="1.5斜体&amp;强调斜体"></a>1.5斜体&amp;强调斜体</h6><p><code>&lt;i&gt;&lt;/i&gt;</code></p>
+<p><code>&lt;em&gt;&lt;/em&gt;</code></p>
+<h6 id="1-6加粗"><a href="#1-6加粗" class="headerlink" title="1.6加粗"></a>1.6加粗</h6><p><code>&lt;strong&gt;&lt;/strong&gt;</code></p>
+<h6 id="1-7删除线"><a href="#1-7删除线" class="headerlink" title="1.7删除线"></a>1.7删除线</h6><p><code>&lt;del&gt;&lt;/del&gt;</code></p>
+<h6 id="1-8上标-amp-下标"><a href="#1-8上标-amp-下标" class="headerlink" title="1.8上标&amp;下标"></a>1.8上标&amp;下标</h6><p><code>&lt;sup&gt;&lt;/sup&gt;</code></p>
+<p><code>&lt;sub&gt;&lt;/sub&gt;</code></p>
+<h6 id="1-9特殊字符"><a href="#1-9特殊字符" class="headerlink" title="1.9特殊字符"></a>1.9特殊字符</h6><p>转义</p>
+<h5 id="1-3列表标签"><a href="#1-3列表标签" class="headerlink" title="1.3列表标签"></a>1.3列表标签</h5><h6 id="1-1无序列表"><a href="#1-1无序列表" class="headerlink" title="1.1无序列表"></a>1.1无序列表</h6><p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;ul&gt;</code></p>
+<p>type属性：</p>
+<ul>
+<li>disc  &#x2F;&#x2F; 圆点</li>
+<li>square  &#x2F;&#x2F;正方形</li>
+<li>circle  &#x2F;&#x2F;空心圆</li>
+<li>decimal  &#x2F;&#x2F;数字</li>
+<li>none  &#x2F;&#x2F;无标记符合</li>
+</ul>
+<h6 id="1-2有序列表"><a href="#1-2有序列表" class="headerlink" title="1.2有序列表"></a>1.2有序列表</h6><p><code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code></p>
+<p>type属性值：</p>
+<ul>
+<li>1  &#x2F;&#x2F;数字1，2…</li>
+<li>a  &#x2F;&#x2F;小写字母a,b…</li>
+<li>A  &#x2F;&#x2F;大写字母A,B…</li>
+<li>i  &#x2F;&#x2F;小写罗马数字i</li>
+<li>Ⅰ  &#x2F;&#x2F;大写罗马数字Ⅰ</li>
+</ul>
+<h6 id="1-3定义列表"><a href="#1-3定义列表" class="headerlink" title="1.3定义列表"></a>1.3定义列表</h6><p><code>&lt;dl&gt;&lt;dt&gt;&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;</code>  &#x2F;&#x2F;dt&amp;dd为同级标签</p>
+<h5 id="1-4图像标签"><a href="#1-4图像标签" class="headerlink" title="1.4图像标签"></a>1.4图像标签</h5><p><code>&lt;img src=&quot;&quot; .../&gt;</code></p>
+<p>img属性：</p>
+<ul>
+<li>src  &#x2F;&#x2F;图像的URL</li>
+<li>alt  &#x2F;&#x2F;图像无法加载是显示的文字</li>
+<li>height  &#x2F;&#x2F;高</li>
+<li>width  &#x2F;&#x2F;宽</li>
+</ul>
+<h5 id="1-5超链接标签"><a href="#1-5超链接标签" class="headerlink" title="1.5超链接标签"></a>1.5超链接标签</h5><p><code>&lt;a href=&quot;&quot; &gt;&lt;/a&gt;</code>  &#x2F;&#x2F;内部地址&amp;外部链接</p>
+<p>属性：</p>
+<ul>
+<li><p>href  &#x2F;&#x2F;链接</p>
+<p>锚点  &#x2F;&#x2F;#+name&#x2F;id 来跳转至元素</p>
+</li>
+<li><p>target  &#x2F;&#x2F;跳转界面</p>
+<p>self  &#x2F;&#x2F;本页跳转</p>
+<p>blank  &#x2F;&#x2F;新窗口</p>
+<p>top  &#x2F;&#x2F;清除框架载入窗口</p>
+<p>parent  &#x2F;&#x2F;载入父窗口或者包含来超链接引用的框架的框架集</p>
+</li>
+</ul>
+<h5 id="1-6表格标签"><a href="#1-6表格标签" class="headerlink" title="1.6表格标签"></a>1.6表格标签</h5><ul>
+<li>table  &#x2F;&#x2F;表格标签</li>
+<li>caption  &#x2F;&#x2F;表格标题</li>
+<li>tr  &#x2F;&#x2F;行标签</li>
+<li>th  &#x2F;&#x2F;列头标签</li>
+<li>td  &#x2F;&#x2F;列标签</li>
+</ul>
+<p>属性：</p>
+<ul>
+<li>cellpadding  &#x2F;&#x2F;内容与其单元格的间距</li>
+<li>cellspacing  &#x2F;&#x2F;单元格之间的距离</li>
+<li>bgcolor  &#x2F;&#x2F;背景颜色</li>
+</ul>
+<p>frame &#x2F;&#x2F;外边框设置</p>
+<ul>
+<li>above  &#x2F;&#x2F;只显示顶部</li>
+<li>below  &#x2F;&#x2F;只显示底部</li>
+<li>vsides  &#x2F;&#x2F;只显示左右</li>
+<li>hsides  &#x2F;&#x2F;只显示上下</li>
+<li>ihs  &#x2F;&#x2F;只显示左侧</li>
+<li>rhs  &#x2F;&#x2F;只显示右侧</li>
+<li>void  &#x2F;&#x2F;显示四周边框线</li>
+<li>box&#x2F;border</li>
+</ul>
+<p>rules &#x2F;&#x2F;单元格边框</p>
+<ul>
+<li>none  &#x2F;&#x2F;不显示单元格边框</li>
+<li>all  &#x2F;&#x2F;显示所有单元格边框线</li>
+<li>cols  &#x2F;&#x2F;显示纵向及单元格左右</li>
+<li>rows  &#x2F;&#x2F;显示横向</li>
+</ul>
+<p>groups  &#x2F;&#x2F;分组显示，只显示thead&#x2F;tbody&#x2F;tfoot的边框线</p>
+<p>rowspan  &#x2F;&#x2F;跨列</p>
+<ul>
+<li>number  &#x2F;&#x2F;合并几列</li>
+</ul>
+<p>colspan  &#x2F;&#x2F;跨行</p>
+<ul>
+<li>number  &#x2F;&#x2F;合并几列</li>
+</ul>
+<h6 id="1-7表单标签"><a href="#1-7表单标签" class="headerlink" title="1.7表单标签"></a>1.7表单标签</h6><p><code>&lt;form&gt;&lt;/form&gt;</code>  &#x2F;&#x2F;表单标签</p>
+<p>属性：</p>
+<ul>
+<li>action  &#x2F;&#x2F;提交信息的url</li>
+<li>method  &#x2F;&#x2F;提交方式</li>
+</ul>
+<p>get  &#x2F;&#x2F;默认</p>
+<p>post</p>
+<ul>
+<li>enctype  &#x2F;&#x2F;提交类型</li>
+</ul>
+<p>enctype&#x3D;”application&#x2F;x-www-form-urlencoded”</p>
+<p>enctype&#x3D;”multipart&#x2F;form-data”</p>
+<ul>
+<li>target &#x2F;&#x2F;在何处打开目标URL</li>
+<li>name&#x2F;id  &#x2F;&#x2F;名字</li>
+</ul>
+<p><code>&lt;input&gt;&lt;/input&gt;</code>   &#x2F;&#x2F;定义输入字段</p>
+<p>type  &#x2F;&#x2F;表单项类型</p>
+<ul>
+<li>text  &#x2F;&#x2F;单行文本框</li>
+<li>password  &#x2F;&#x2F;密码专属</li>
+<li>checkbox  &#x2F;&#x2F;多选框  要提供value</li>
+<li>radio  &#x2F;&#x2F;单选框 要提供value</li>
+<li>file  &#x2F;&#x2F;文件上传选择框</li>
+<li>button  &#x2F;&#x2F;普通按钮</li>
+<li>submit  &#x2F;&#x2F;提交按钮</li>
+<li>image  &#x2F;&#x2F;图片提交按钮</li>
+<li>reset  &#x2F;&#x2F;重置按钮，还原到开始(第一次打开页面时)</li>
+<li>hidden  &#x2F;&#x2F;主表单隐藏域，一起提交，但无需修改</li>
+</ul>
+<p>name  &#x2F;&#x2F;表单项名，存储内容</p>
+<p>value  &#x2F;&#x2F;输入的值</p>
+<p>size  &#x2F;&#x2F;输入框宽度</p>
+<p>maxlength  &#x2F;&#x2F;输入框输入内容的最大长度</p>
+<p>readonly  &#x2F;&#x2F;对输入框只读</p>
+<p>disabled  &#x2F;&#x2F;禁用属性</p>
+<p>checked  对选择框指定默认选项</p>
+<p>accesskey  &#x2F;&#x2F;指定快捷键</p>
+<p>tabindex  &#x2F;&#x2F;通过数字指定tab键切换数据</p>
+<p><code>&lt;select&gt;&lt;/select&gt;</code>  &#x2F;&#x2F;创建下拉列表</p>
+<p>属性：</p>
+<ul>
+<li>name  &#x2F;&#x2F;定义名称，存储下拉值</li>
+<li>size  &#x2F;&#x2F;定义可见项目</li>
+<li>disabled  &#x2F;&#x2F;当该属性为true时，禁用该菜单</li>
+<li>multiple  &#x2F;&#x2F;多选</li>
+</ul>
+<p><code>&lt;option&gt;&lt;/option&gt;</code>  &#x2F;&#x2F;下拉时选择项的标签，嵌套到input中</p>
+<ul>
+<li>value  &#x2F;&#x2F;下拉项的值</li>
+<li>selected  &#x2F;&#x2F;默认下拉指定项</li>
+</ul>
+<p><code>&lt;textarea&gt;</code>  &#x2F;&#x2F;多行文本输入区域</p>
+<ul>
+<li>name  &#x2F;&#x2F;定义名称，存储值</li>
+<li>cols  &#x2F;&#x2F;文本区可见列数</li>
+<li>rows  &#x2F;&#x2F;文本区可见行数</li>
+<li>disabled  &#x2F;&#x2F;是否禁用</li>
+<li>readonly  &#x2F;&#x2F;只读</li>
+</ul>
+<p><code>&lt;button&gt;&lt;/button&gt;</code>  &#x2F;&#x2F;标签定义按钮，与input不同之处：可放置文档或图像</p>
+<p><code>&lt;fieldset&gt;&lt;/fieldset&gt;</code>   &#x2F;&#x2F;将表单内元素分组</p>
+<ul>
+<li>disabled  &#x2F;&#x2F;定义fieldset是否可见</li>
+<li>form  &#x2F;&#x2F;所属一个或多个表单</li>
+</ul>
+<p><code>&lt;optgroup&gt;</code>  &#x2F;&#x2F;定义选项组，在选项中分组</p>
+<p><code>&lt;datalist&gt;</code>  &#x2F;&#x2F;定义可输入筛选列表可选数据的列表</p>
+<h5 id="1-8关系"><a href="#1-8关系" class="headerlink" title="1.8关系"></a>1.8关系</h5><h6 id="1-1嵌套"><a href="#1-1嵌套" class="headerlink" title="1.1嵌套"></a>1.1嵌套</h6><p><code>&lt;head&gt; &lt;title&gt;&lt;/title&gt;&lt;/head&gt;</code></p>
+<h6 id="1-2并列"><a href="#1-2并列" class="headerlink" title="1.2并列"></a>1.2并列</h6><p><code>&lt;head&gt;&lt;/head&gt;</code></p>
+<p><code>&lt;body&gt;&lt;/body&gt;</code></p>
+<h4 id="1-2属性"><a href="#1-2属性" class="headerlink" title="1.2属性"></a>1.2属性</h4><p>键值对的格式</p>
+<p><code>&lt;hr width=&quot;400&quot; color=&quot;red&quot; /&gt;</code></p>
+<h5 id="1-2-1通用属性"><a href="#1-2-1通用属性" class="headerlink" title="1.2.1通用属性"></a>1.2.1通用属性</h5><p>id  &#x2F;&#x2F;标签的唯一标识，同一也页唯一</p>
+<p>class  &#x2F;&#x2F;样式的设置</p>
+<p>style  &#x2F;&#x2F;标签的样式</p>
+<h4 id="1-3注释"><a href="#1-3注释" class="headerlink" title="1.3注释"></a>1.3注释</h4><h3 id="1-4三大骨架"><a href="#1-4三大骨架" class="headerlink" title="1.4三大骨架"></a>1.4三大骨架</h3><h4 id="1-4-1html-x2F-x2F-html顶层标签"><a href="#1-4-1html-x2F-x2F-html顶层标签" class="headerlink" title="1.4.1html  &#x2F;&#x2F;html顶层标签"></a>1.4.1html  &#x2F;&#x2F;html顶层标签</h4><h4 id="1-4-2head-x2F-x2F-html网页头部"><a href="#1-4-2head-x2F-x2F-html网页头部" class="headerlink" title="1.4.2head  &#x2F;&#x2F;html网页头部"></a>1.4.2head  &#x2F;&#x2F;html网页头部</h4><h4 id="1-4-3body-x2F-x2F-html网页内容"><a href="#1-4-3body-x2F-x2F-html网页内容" class="headerlink" title="1.4.3body  &#x2F;&#x2F;html网页内容"></a>1.4.3body  &#x2F;&#x2F;html网页内容</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+            <div class="post-button text-center">
+              <a class="btn scaleup" href="/2022/10/26/%E5%89%8D%E7%AB%AF1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">10月</div>
+			<div class="post-day">26</div>
+	</div>
+  
+
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/%E5%89%8D%E7%AB%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1105,406 +1505,6 @@
 
             <div class="post-button text-center">
               <a class="btn scaleup" href="/2022/10/26/%E5%89%8D%E7%AB%AF/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-date">
-			<div class="post-month">10月</div>
-			<div class="post-day">26</div>
-	</div>
-  
-
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/%E5%89%8D%E7%AB%AF1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Anya.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aoman">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link scaleup" href="/2022/10/26/%E5%89%8D%E7%AB%AF1/" itemprop="url">HTML基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T20:12:17+08:00">2022-10-26</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-      
-
-      
-        
-          
-            <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="1-html"><a href="#1-html" class="headerlink" title="1.html"></a>1.html</h2><h3 id="1-1定义"><a href="#1-1定义" class="headerlink" title="1.1定义"></a>1.1定义</h3><p>超文本标记语言</p>
-<h3 id="1-2标准"><a href="#1-2标准" class="headerlink" title="1.2标准"></a>1.2标准</h3><p>文档声明</p>
-<p><code>&lt;!DOCTYPE html&gt;</code></p>
-<p>字符集</p>
-<p><code>&lt;meta charset=&quot;utf-8&quot; /&gt;</code></p>
-<h4 id="1-2-1结构"><a href="#1-2-1结构" class="headerlink" title="1.2.1结构"></a>1.2.1结构</h4><p>网页元素的整理分类  &#x2F;&#x2F;html</p>
-<h4 id="1-2-2表现"><a href="#1-2-2表现" class="headerlink" title="1.2.2表现"></a>1.2.2表现</h4><p>网页元素的版式，颜色，样式  &#x2F;&#x2F;css</p>
-<h4 id="1-2-3行为"><a href="#1-2-3行为" class="headerlink" title="1.2.3行为"></a>1.2.3行为</h4><p>网页模型的定义与交互的编写  &#x2F;&#x2F;js </p>
-<h3 id="1-3语法"><a href="#1-3语法" class="headerlink" title="1.3语法"></a>1.3语法</h3><h4 id="1-1标签"><a href="#1-1标签" class="headerlink" title="1.1标签"></a>1.1标签</h4><h5 id="1-1单标签-amp-双标签"><a href="#1-1单标签-amp-双标签" class="headerlink" title="1.1单标签&amp;双标签"></a>1.1单标签&amp;双标签</h5><p><code>&lt;title&gt;xxx&lt;/title&gt;</code>  &#x2F;&#x2F;双标签</p>
-<p><code>&lt;br/&gt;</code>   &#x2F;&#x2F;单标签</p>
-<h5 id="1-2文本标签"><a href="#1-2文本标签" class="headerlink" title="1.2文本标签"></a>1.2文本标签</h5><h6 id="1-1标题标签"><a href="#1-1标题标签" class="headerlink" title="1.1标题标签"></a>1.1标题标签</h6><p><code>&lt;hx&gt;</code></p>
-<h6 id="1-2段落标签"><a href="#1-2段落标签" class="headerlink" title="1.2段落标签"></a>1.2段落标签</h6><p><code>&lt;p&gt;</code>  &#x2F;&#x2F;html编码可实体</p>
-<h6 id="1-3分割线标签"><a href="#1-3分割线标签" class="headerlink" title="1.3分割线标签"></a>1.3分割线标签</h6><p><code>&lt;hr&gt;</code></p>
-<h6 id="1-4换行标签"><a href="#1-4换行标签" class="headerlink" title="1.4换行标签"></a>1.4换行标签</h6><p><code>&lt;br&gt;</code></p>
-<h6 id="1-5斜体-amp-强调斜体"><a href="#1-5斜体-amp-强调斜体" class="headerlink" title="1.5斜体&amp;强调斜体"></a>1.5斜体&amp;强调斜体</h6><p><code>&lt;i&gt;&lt;/i&gt;</code></p>
-<p><code>&lt;em&gt;&lt;/em&gt;</code></p>
-<h6 id="1-6加粗"><a href="#1-6加粗" class="headerlink" title="1.6加粗"></a>1.6加粗</h6><p><code>&lt;strong&gt;&lt;/strong&gt;</code></p>
-<h6 id="1-7删除线"><a href="#1-7删除线" class="headerlink" title="1.7删除线"></a>1.7删除线</h6><p><code>&lt;del&gt;&lt;/del&gt;</code></p>
-<h6 id="1-8上标-amp-下标"><a href="#1-8上标-amp-下标" class="headerlink" title="1.8上标&amp;下标"></a>1.8上标&amp;下标</h6><p><code>&lt;sup&gt;&lt;/sup&gt;</code></p>
-<p><code>&lt;sub&gt;&lt;/sub&gt;</code></p>
-<h6 id="1-9特殊字符"><a href="#1-9特殊字符" class="headerlink" title="1.9特殊字符"></a>1.9特殊字符</h6><p>转义</p>
-<h5 id="1-3列表标签"><a href="#1-3列表标签" class="headerlink" title="1.3列表标签"></a>1.3列表标签</h5><h6 id="1-1无序列表"><a href="#1-1无序列表" class="headerlink" title="1.1无序列表"></a>1.1无序列表</h6><p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;ul&gt;</code></p>
-<p>type属性：</p>
-<ul>
-<li>disc  &#x2F;&#x2F; 圆点</li>
-<li>square  &#x2F;&#x2F;正方形</li>
-<li>circle  &#x2F;&#x2F;空心圆</li>
-<li>decimal  &#x2F;&#x2F;数字</li>
-<li>none  &#x2F;&#x2F;无标记符合</li>
-</ul>
-<h6 id="1-2有序列表"><a href="#1-2有序列表" class="headerlink" title="1.2有序列表"></a>1.2有序列表</h6><p><code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code></p>
-<p>type属性值：</p>
-<ul>
-<li>1  &#x2F;&#x2F;数字1，2…</li>
-<li>a  &#x2F;&#x2F;小写字母a,b…</li>
-<li>A  &#x2F;&#x2F;大写字母A,B…</li>
-<li>i  &#x2F;&#x2F;小写罗马数字i</li>
-<li>Ⅰ  &#x2F;&#x2F;大写罗马数字Ⅰ</li>
-</ul>
-<h6 id="1-3定义列表"><a href="#1-3定义列表" class="headerlink" title="1.3定义列表"></a>1.3定义列表</h6><p><code>&lt;dl&gt;&lt;dt&gt;&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;</code>  &#x2F;&#x2F;dt&amp;dd为同级标签</p>
-<h5 id="1-4图像标签"><a href="#1-4图像标签" class="headerlink" title="1.4图像标签"></a>1.4图像标签</h5><p><code>&lt;img src=&quot;&quot; .../&gt;</code></p>
-<p>img属性：</p>
-<ul>
-<li>src  &#x2F;&#x2F;图像的URL</li>
-<li>alt  &#x2F;&#x2F;图像无法加载是显示的文字</li>
-<li>height  &#x2F;&#x2F;高</li>
-<li>width  &#x2F;&#x2F;宽</li>
-</ul>
-<h5 id="1-5超链接标签"><a href="#1-5超链接标签" class="headerlink" title="1.5超链接标签"></a>1.5超链接标签</h5><p><code>&lt;a href=&quot;&quot; &gt;&lt;/a&gt;</code>  &#x2F;&#x2F;内部地址&amp;外部链接</p>
-<p>属性：</p>
-<ul>
-<li><p>href  &#x2F;&#x2F;链接</p>
-<p>锚点  &#x2F;&#x2F;#+name&#x2F;id 来跳转至元素</p>
-</li>
-<li><p>target  &#x2F;&#x2F;跳转界面</p>
-<p>self  &#x2F;&#x2F;本页跳转</p>
-<p>blank  &#x2F;&#x2F;新窗口</p>
-<p>top  &#x2F;&#x2F;清除框架载入窗口</p>
-<p>parent  &#x2F;&#x2F;载入父窗口或者包含来超链接引用的框架的框架集</p>
-</li>
-</ul>
-<h5 id="1-6表格标签"><a href="#1-6表格标签" class="headerlink" title="1.6表格标签"></a>1.6表格标签</h5><ul>
-<li>table  &#x2F;&#x2F;表格标签</li>
-<li>caption  &#x2F;&#x2F;表格标题</li>
-<li>tr  &#x2F;&#x2F;行标签</li>
-<li>th  &#x2F;&#x2F;列头标签</li>
-<li>td  &#x2F;&#x2F;列标签</li>
-</ul>
-<p>属性：</p>
-<ul>
-<li>cellpadding  &#x2F;&#x2F;内容与其单元格的间距</li>
-<li>cellspacing  &#x2F;&#x2F;单元格之间的距离</li>
-<li>bgcolor  &#x2F;&#x2F;背景颜色</li>
-</ul>
-<p>frame &#x2F;&#x2F;外边框设置</p>
-<ul>
-<li>above  &#x2F;&#x2F;只显示顶部</li>
-<li>below  &#x2F;&#x2F;只显示底部</li>
-<li>vsides  &#x2F;&#x2F;只显示左右</li>
-<li>hsides  &#x2F;&#x2F;只显示上下</li>
-<li>ihs  &#x2F;&#x2F;只显示左侧</li>
-<li>rhs  &#x2F;&#x2F;只显示右侧</li>
-<li>void  &#x2F;&#x2F;显示四周边框线</li>
-<li>box&#x2F;border</li>
-</ul>
-<p>rules &#x2F;&#x2F;单元格边框</p>
-<ul>
-<li>none  &#x2F;&#x2F;不显示单元格边框</li>
-<li>all  &#x2F;&#x2F;显示所有单元格边框线</li>
-<li>cols  &#x2F;&#x2F;显示纵向及单元格左右</li>
-<li>rows  &#x2F;&#x2F;显示横向</li>
-</ul>
-<p>groups  &#x2F;&#x2F;分组显示，只显示thead&#x2F;tbody&#x2F;tfoot的边框线</p>
-<p>rowspan  &#x2F;&#x2F;跨列</p>
-<ul>
-<li>number  &#x2F;&#x2F;合并几列</li>
-</ul>
-<p>colspan  &#x2F;&#x2F;跨行</p>
-<ul>
-<li>number  &#x2F;&#x2F;合并几列</li>
-</ul>
-<h6 id="1-7表单标签"><a href="#1-7表单标签" class="headerlink" title="1.7表单标签"></a>1.7表单标签</h6><p><code>&lt;form&gt;&lt;/form&gt;</code>  &#x2F;&#x2F;表单标签</p>
-<p>属性：</p>
-<ul>
-<li>action  &#x2F;&#x2F;提交信息的url</li>
-<li>method  &#x2F;&#x2F;提交方式</li>
-</ul>
-<p>get  &#x2F;&#x2F;默认</p>
-<p>post</p>
-<ul>
-<li>enctype  &#x2F;&#x2F;提交类型</li>
-</ul>
-<p>enctype&#x3D;”application&#x2F;x-www-form-urlencoded”</p>
-<p>enctype&#x3D;”multipart&#x2F;form-data”</p>
-<ul>
-<li>target &#x2F;&#x2F;在何处打开目标URL</li>
-<li>name&#x2F;id  &#x2F;&#x2F;名字</li>
-</ul>
-<p><code>&lt;input&gt;&lt;/input&gt;</code>   &#x2F;&#x2F;定义输入字段</p>
-<p>type  &#x2F;&#x2F;表单项类型</p>
-<ul>
-<li>text  &#x2F;&#x2F;单行文本框</li>
-<li>password  &#x2F;&#x2F;密码专属</li>
-<li>checkbox  &#x2F;&#x2F;多选框  要提供value</li>
-<li>radio  &#x2F;&#x2F;单选框 要提供value</li>
-<li>file  &#x2F;&#x2F;文件上传选择框</li>
-<li>button  &#x2F;&#x2F;普通按钮</li>
-<li>submit  &#x2F;&#x2F;提交按钮</li>
-<li>image  &#x2F;&#x2F;图片提交按钮</li>
-<li>reset  &#x2F;&#x2F;重置按钮，还原到开始(第一次打开页面时)</li>
-<li>hidden  &#x2F;&#x2F;主表单隐藏域，一起提交，但无需修改</li>
-</ul>
-<p>name  &#x2F;&#x2F;表单项名，存储内容</p>
-<p>value  &#x2F;&#x2F;输入的值</p>
-<p>size  &#x2F;&#x2F;输入框宽度</p>
-<p>maxlength  &#x2F;&#x2F;输入框输入内容的最大长度</p>
-<p>readonly  &#x2F;&#x2F;对输入框只读</p>
-<p>disabled  &#x2F;&#x2F;禁用属性</p>
-<p>checked  对选择框指定默认选项</p>
-<p>accesskey  &#x2F;&#x2F;指定快捷键</p>
-<p>tabindex  &#x2F;&#x2F;通过数字指定tab键切换数据</p>
-<p><code>&lt;select&gt;&lt;/select&gt;</code>  &#x2F;&#x2F;创建下拉列表</p>
-<p>属性：</p>
-<ul>
-<li>name  &#x2F;&#x2F;定义名称，存储下拉值</li>
-<li>size  &#x2F;&#x2F;定义可见项目</li>
-<li>disabled  &#x2F;&#x2F;当该属性为true时，禁用该菜单</li>
-<li>multiple  &#x2F;&#x2F;多选</li>
-</ul>
-<p><code>&lt;option&gt;&lt;/option&gt;</code>  &#x2F;&#x2F;下拉时选择项的标签，嵌套到input中</p>
-<ul>
-<li>value  &#x2F;&#x2F;下拉项的值</li>
-<li>selected  &#x2F;&#x2F;默认下拉指定项</li>
-</ul>
-<p><code>&lt;textarea&gt;</code>  &#x2F;&#x2F;多行文本输入区域</p>
-<ul>
-<li>name  &#x2F;&#x2F;定义名称，存储值</li>
-<li>cols  &#x2F;&#x2F;文本区可见列数</li>
-<li>rows  &#x2F;&#x2F;文本区可见行数</li>
-<li>disabled  &#x2F;&#x2F;是否禁用</li>
-<li>readonly  &#x2F;&#x2F;只读</li>
-</ul>
-<p><code>&lt;button&gt;&lt;/button&gt;</code>  &#x2F;&#x2F;标签定义按钮，与input不同之处：可放置文档或图像</p>
-<p><code>&lt;fieldset&gt;&lt;/fieldset&gt;</code>   &#x2F;&#x2F;将表单内元素分组</p>
-<ul>
-<li>disabled  &#x2F;&#x2F;定义fieldset是否可见</li>
-<li>form  &#x2F;&#x2F;所属一个或多个表单</li>
-</ul>
-<p><code>&lt;optgroup&gt;</code>  &#x2F;&#x2F;定义选项组，在选项中分组</p>
-<p><code>&lt;datalist&gt;</code>  &#x2F;&#x2F;定义可输入筛选列表可选数据的列表</p>
-<h5 id="1-8关系"><a href="#1-8关系" class="headerlink" title="1.8关系"></a>1.8关系</h5><h6 id="1-1嵌套"><a href="#1-1嵌套" class="headerlink" title="1.1嵌套"></a>1.1嵌套</h6><p><code>&lt;head&gt; &lt;title&gt;&lt;/title&gt;&lt;/head&gt;</code></p>
-<h6 id="1-2并列"><a href="#1-2并列" class="headerlink" title="1.2并列"></a>1.2并列</h6><p><code>&lt;head&gt;&lt;/head&gt;</code></p>
-<p><code>&lt;body&gt;&lt;/body&gt;</code></p>
-<h4 id="1-2属性"><a href="#1-2属性" class="headerlink" title="1.2属性"></a>1.2属性</h4><p>键值对的格式</p>
-<p><code>&lt;hr width=&quot;400&quot; color=&quot;red&quot; /&gt;</code></p>
-<h5 id="1-2-1通用属性"><a href="#1-2-1通用属性" class="headerlink" title="1.2.1通用属性"></a>1.2.1通用属性</h5><p>id  &#x2F;&#x2F;标签的唯一标识，同一也页唯一</p>
-<p>class  &#x2F;&#x2F;样式的设置</p>
-<p>style  &#x2F;&#x2F;标签的样式</p>
-<h4 id="1-3注释"><a href="#1-3注释" class="headerlink" title="1.3注释"></a>1.3注释</h4><h3 id="1-4三大骨架"><a href="#1-4三大骨架" class="headerlink" title="1.4三大骨架"></a>1.4三大骨架</h3><h4 id="1-4-1html-x2F-x2F-html顶层标签"><a href="#1-4-1html-x2F-x2F-html顶层标签" class="headerlink" title="1.4.1html  &#x2F;&#x2F;html顶层标签"></a>1.4.1html  &#x2F;&#x2F;html顶层标签</h4><h4 id="1-4-2head-x2F-x2F-html网页头部"><a href="#1-4-2head-x2F-x2F-html网页头部" class="headerlink" title="1.4.2head  &#x2F;&#x2F;html网页头部"></a>1.4.2head  &#x2F;&#x2F;html网页头部</h4><h4 id="1-4-3body-x2F-x2F-html网页内容"><a href="#1-4-3body-x2F-x2F-html网页内容" class="headerlink" title="1.4.3body  &#x2F;&#x2F;html网页内容"></a>1.4.3body  &#x2F;&#x2F;html网页内容</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
-            <div class="post-button text-center">
-              <a class="btn scaleup" href="/2022/10/26/%E5%89%8D%E7%AB%AF1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-date">
-			<div class="post-month">10月</div>
-			<div class="post-day">26</div>
-	</div>
-  
-
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/python3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Anya.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aoman">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link scaleup" href="/2022/10/26/python3/" itemprop="url">python基础爬虫--代理池</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-26T20:12:17+08:00">2022-10-26</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-      
-
-      
-        
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> requests <span class="keyword">import</span> adapters</span><br><span class="line"></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_66</span>(<span class="params">data_text1</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS_66</span><br><span class="line">    IPZ_66 = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td&gt;(\d+.\d+.\d+.\d+)&lt;/td&gt;&lt;td&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS_66 = re.findall(IPZ_66,data_text1)</span><br><span class="line">    <span class="keyword">return</span> IPS_66</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">port_p</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> DKS</span><br><span class="line">    DKZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;PORT&quot;&gt;(\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    DKS = re.findall(DKZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> DKS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ip_ip</span>(<span class="params">data_text</span>):</span><br><span class="line">    <span class="keyword">global</span> IPS</span><br><span class="line">    IPZ = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;td data-title=&quot;IP&quot;&gt;(\d+\.\d+\.\d+\.\d+)&lt;/td&gt;&#x27;</span>,re.S)</span><br><span class="line">    IPS = re.findall(IPZ,data_text)</span><br><span class="line">    <span class="keyword">return</span> IPS</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pinjie</span>():</span><br><span class="line">    <span class="comment"># 功能需求：实现两个IPS和DKS的拼接，结果是IPS:DSK</span></span><br><span class="line">    ip_z= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(IPS)):</span><br><span class="line">        ip_z.append(IPS[i]+<span class="string">&#x27;:&#x27;</span>+DKS[i])</span><br><span class="line">    <span class="comment"># 输出结果  [&#x27;xxxx:xxxx&#x27;]</span></span><br><span class="line">    dl_write(ip_z)</span><br><span class="line">    <span class="keyword">return</span> ip_z</span><br><span class="line"><span class="comment"># def merge_list(list1,list2):</span></span><br><span class="line"><span class="comment">#      python 有个拉链函数， zip(list1,list2),可以实现合并功能</span></span><br><span class="line"><span class="comment">#     print(list(zip(list1,list2)))</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dl_write</span>(<span class="params">ip_z</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> DIP <span class="keyword">in</span> ip_z:</span><br><span class="line">            f.write(DIP+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    test_corr()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_corr</span>():</span><br><span class="line">    corr=[]</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ipcs.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="comment"># 设置重连次数</span></span><br><span class="line">                adapters.DEFAULT_RETRIES = <span class="number">3</span></span><br><span class="line">                <span class="comment"># IP = random.choice(IPAgents)</span></span><br><span class="line">                proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">                <span class="comment"># thisIP = &quot;&quot;.join(IP.split(&quot;:&quot;)[0:1])</span></span><br><span class="line">                <span class="comment"># print(thisIP)</span></span><br><span class="line">                res = requests.get(url=<span class="string">&quot;http://icanhazip.com/&quot;</span>, timeout=<span class="number">2</span>, proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">                <span class="keyword">if</span> (res.status_code == <span class="number">200</span>):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;有效&quot;</span>)</span><br><span class="line">                    corr.append(i)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;代理IP:&quot;</span>+i+<span class="string">&quot;无效&quot;</span>)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br><span class="line">    text_qualified(corr)</span><br><span class="line">    <span class="keyword">return</span> corr         </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text_qualified</span>(<span class="params">corr</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> corr:</span><br><span class="line">            f.write(i)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ipyc</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ip.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            proxy = <span class="string">f&quot;http://<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">            data = requests.get(<span class="string">&#x27;https://free.kuaidaili.com/free/inha/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_1=requests.get(<span class="string">&#x27;http://www.66ip.cn/&#x27;</span>,headers= header,proxies=&#123;<span class="string">&quot;http&quot;</span>: proxy&#125;)</span><br><span class="line">            data_text1=data_1.text</span><br><span class="line">            data_text = data.text</span><br><span class="line">            <span class="keyword">if</span> data.status_code == <span class="number">200</span>:</span><br><span class="line">                port_p(data_text)</span><br><span class="line">                ip_ip(data_text)</span><br><span class="line">                pinjie()</span><br><span class="line">                ip_66(data_text1)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">ipyc()</span><br><span class="line">    </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-
-
-            <div class="post-button text-center">
-              <a class="btn scaleup" href="/2022/10/26/python3/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
