@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+
+
+<html class="anya" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fff">
+
+<link rel="preload" href="/fonts/Candyshop.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+
+
+
+  
+
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/anya.min.css?v=1.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=1.0.2">
+
+
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0.2" color="#fff">
+
+
+  <link rel="manifest" href="/site.webmanifest">
+
+
+
+  <meta name="keywords" content="anya,blog,hexo,hexo-theme-anya" />
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var Anya = window.Anya || {};
+  var CONFIG = {
+    root: '',
+    version: '1.0.2',
+    sidebar: {"position":"right","offset":52,"b2t":true},
+    tabs: true,
+    since: '26/10/2022 9:30:00',
+    site: {
+      title: '',
+      subtitle: '',
+      author: ''
+    },
+    favicon: {
+      visibilitychange: true,
+      normal: '/favicon.ico',
+      hidden: '/failure.ico',
+      show_text: '(/≧▽≦/)咦！又好了！',
+      hide_text: '(●—●)喔哟，崩溃啦！'
+    }
+  };
+</script>
+
+
+
+
+  <title>javaSE | aoman</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fas fa-meteor"></i> <br />
+            
+            首页
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-跳转">
+          <a href="javascript:;" rel="section">
+            
+              <i class="menu-item-icon fas fa-magic"></i> <br />
+            
+            跳转
+          </a>
+          
+            <ul class="submenu submenu-跳转">
+              
+                
+                <li class="submenu-item submenu-item-twitter">
+                  <a target="_blank" href="https://twitter.com/" rel="section noopener">
+                    twitter
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-github">
+                  <a target="_blank" href="https://github.com/" rel="section noopener">
+                    github
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-youtube">
+                  <a target="_blank" href="https://www.youtube.com/" rel="section noopener">
+                    youtube
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-edit-me">
+                  <a href="javascript:;" rel="section">
+                    Edit me
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fas fa-archive"></i> <br />
+            
+            归档
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-页面">
+          <a href="/page/" rel="section">
+            
+              <i class="menu-item-icon fas fa-file-alt"></i> <br />
+            
+            页面
+          </a>
+          
+        </li>
+      
+
+      
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+          </form>
+      </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper">
+  <div class="site-brand-bg">
+      <img loading="lazy" src="/images/header.jpg">
+  </div>
+  <div class="site-meta">
+    <div class="custom-logo-site-title">
+      <div class="brand">
+        <span class="logo-line-before"><i></i></span>
+        <div class="site-title">
+          <div id="animate-stroke" class="animate">
+            <span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokeo"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokem"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#strokea"></use>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <use xlink:href="#stroken"></use>
+                  </svg>
+                </span>
+          </div>
+          <div id="animate" class="animate">
+            <span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokeo">o</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokem">m</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="strokea">a</text>
+                  </svg>
+                </span><span>
+                  <svg>
+                    <text id="stroken">n</text>
+                  </svg>
+                </span>
+          </div>
+          <div id="guide" class="guide">
+            <span>a</span><span>o</span><span>m</span><span>a</span><span>n</span>
+          </div>
+        </div>
+        <span class="logo-line-after"><i></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-master-avatar scaleup" itemprop="image" src="/images/Anya.png" alt="" />
+    <h2 class="site-master-description scaleup" itemprop="description">
+        
+    </h2>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">10月</div>
+			<div class="post-day">27</div>
+	</div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/27/javase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Anya.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoman">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javaSE</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-27T20:11:23+08:00">2022-10-27</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      <div class="post-toc-content"><div class="post-toc-title">文章目录</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaSE"><span class="nav-text">javaSE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">1.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%B3%A8%E9%87%8A-amp-%E6%A0%87%E8%AF%86%E7%AC%A6-amp-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.1注释&amp;标识符&amp;关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E6%B3%A8%E9%87%8A"><span class="nav-text">1.1.1注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-text">1.1.2标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.1.3关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.2数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.2.1基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E6%95%B4%E6%95%B0%E5%9E%8B"><span class="nav-text">1.1整数型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="nav-text">1.2浮点型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="nav-text">1.3字符型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.2.2引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E7%B1%BB"><span class="nav-text">1.1类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E6%8E%A5%E5%8F%A3"><span class="nav-text">1.2接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3%E6%95%B0%E7%BB%84"><span class="nav-text">1.3数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.3类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.1强制转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.2自动转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%98%E9%87%8F"><span class="nav-text">1.4变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89"><span class="nav-text">1.1定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="nav-text">1.2类变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-text">1.3实例变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-text">1.4局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E5%B8%B8%E9%87%8F"><span class="nav-text">1.5常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E7%B1%BB%E5%90%8D"><span class="nav-text">1.6类名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7%E6%96%B9%E6%B3%95%E5%90%8D"><span class="nav-text">1.7方法名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">1.5修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.6运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.1算数运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.2赋值运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.3关系运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.4逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.5位运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.6条件运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7%E6%89%A9%E5%B1%95%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.7扩展赋值运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E8%BF%9E%E6%8E%A5%E7%AC%A6"><span class="nav-text">1.7连接符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8javadoc"><span class="nav-text">1.8javadoc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BC%96%E8%AF%91%E5%9E%8B-amp-%E8%A7%A3%E9%87%8A%E5%9E%8B"><span class="nav-text">2.编译型&amp;解释型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E7%BC%96%E8%AF%91%E5%9E%8B"><span class="nav-text">1.1编译型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="nav-text">1.1.1反编译</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E8%A7%A3%E9%87%8A%E6%80%A7"><span class="nav-text">1.2解释性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AF%AD%E5%8F%A5"><span class="nav-text">3.语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1scanner%E5%AF%B9%E8%B1%A1"><span class="nav-text">1.1scanner对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">1.1.1基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2next-amp-nextLine"><span class="nav-text">1.1.2next()&amp;nextLine()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">1.2顺序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="nav-text">1.3选择结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1if%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.3.1if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2if-else%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.3.2if else语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3if-else-if%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.3.3if else if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-4if%E5%B5%8C%E5%A5%97"><span class="nav-text">1.3.4if嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-5switch-case%E8%AF%AD%E5%8F%A5"><span class="nav-text">1.3.5switch case语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">1.4循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1while%E5%BE%AA%E7%8E%AF"><span class="nav-text">1.4.1while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2do-while%E5%BE%AA%E7%8E%AF"><span class="nav-text">1.4.2do while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3for%E5%BE%AA%E7%8E%AF"><span class="nav-text">1.4.3for循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-4%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF"><span class="nav-text">1.4.4增强for循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5break-amp-coutinue"><span class="nav-text">1.5break&amp;coutinue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1break"><span class="nav-text">1.5.1break</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-2coutinue"><span class="nav-text">1.5.2coutinue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8C%85%E6%9C%BA%E5%88%B6"><span class="nav-text">4.包机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">1.1语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="nav-text">1.2导入包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%B9%E6%B3%95"><span class="nav-text">5.方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89-amp-%E8%B0%83%E7%94%A8"><span class="nav-text">1.1定义&amp;调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">1.1.1修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.1.2返回值类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3%E6%96%B9%E6%B3%95%E5%90%8D"><span class="nav-text">1.1.3方法名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-4%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.1.4参数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-5%E6%96%B9%E6%B3%95%E4%BD%93"><span class="nav-text">1.1.5方法体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-6return"><span class="nav-text">1.1.6return</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-7%E8%B0%83%E7%94%A8"><span class="nav-text">1.1.7调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-text">1.2方法的重载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%AE%9A%E4%B9%89"><span class="nav-text">1.2.1定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E8%A7%84%E5%88%99"><span class="nav-text">1.2.2规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3%E5%AE%9E%E7%8E%B0"><span class="nav-text">1.2.3实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BC%A0%E5%8F%82"><span class="nav-text">1.3命令行传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-text">1.4可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E9%80%92%E5%BD%92"><span class="nav-text">1.5递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1%E9%80%92%E5%BD%92%E7%BB%93%E6%9E%84"><span class="nav-text">1.5.1递归结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6%E6%95%B0%E7%BB%84"><span class="nav-text">1.6数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89-1"><span class="nav-text">1.1定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%89%B9%E7%82%B9"><span class="nav-text">1.2特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E5%88%9B%E5%BB%BA%E5%A3%B0%E6%98%8E"><span class="nav-text">1.3创建声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E4%BD%BF%E7%94%A8"><span class="nav-text">1.4使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text">1.5多维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-text">1.6内存分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-1%E5%A0%86"><span class="nav-text">1.6.1堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-2%E6%A0%88"><span class="nav-text">1.6.2栈</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">1.7初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-1%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">1.7.1静态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-2%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">1.7.2动态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-3%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">1.7.3默认初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E6%95%B0%E7%BB%84%E8%BE%B9%E7%95%8C"><span class="nav-text">1.8数组边界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">1.7面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%9C%AC%E8%B4%A8"><span class="nav-text">1.1本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%89%B9%E6%80%A7"><span class="nav-text">1.2特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%B0%81%E8%A3%85"><span class="nav-text">1.2.1封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E7%BB%A7%E6%89%BF"><span class="nav-text">1.2.2继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3%E5%A4%9A%E6%80%81"><span class="nav-text">1.2.3多态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E7%B1%BB"><span class="nav-text">1.3类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-text">1.3.1抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-text">1.3.1内部类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%88%9B%E5%BB%BA-amp-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E8%B1%A1"><span class="nav-text">1.4创建&amp;初始化对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-text">1.4.1创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-text">1.4.2构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0"><span class="nav-text">1.1有参构造</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E7%89%B9%E7%82%B9"><span class="nav-text">1.1特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E6%8E%A5%E5%8F%A3"><span class="nav-text">1.5接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1%E4%BD%9C%E7%94%A8"><span class="nav-text">1.5.1作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%BC%82%E5%B8%B8"><span class="nav-text">1.6异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-1%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-text">1.6.1异常处理机制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      
+      
+
+      
+        <h1 id="javaSE"><a href="#javaSE" class="headerlink" title="javaSE"></a>javaSE</h1><h2 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1.基础语法"></a>1.基础语法</h2><p>public class a{</p>
+<p>​	public static void main (string[] args){</p>
+<p>​		print(“xx”);</p>
+<p>​	}	</p>
+<p>}</p>
+<p>java大小写敏感</p>
+<p>尽量使用英文</p>
+<p>文件名类名保持一致且首字母大写</p>
+<h3 id="1-1注释-amp-标识符-amp-关键字"><a href="#1-1注释-amp-标识符-amp-关键字" class="headerlink" title="1.1注释&amp;标识符&amp;关键字"></a>1.1注释&amp;标识符&amp;关键字</h3><h4 id="1-1-1注释"><a href="#1-1-1注释" class="headerlink" title="1.1.1注释"></a>1.1.1注释</h4><p>单行注释  &#x2F;&#x2F;</p>
+<p>多行注释  &#x2F;* *&#x2F;</p>
+<p>文档注释  &#x2F;** *&#x2F;</p>
+<h4 id="1-1-2标识符"><a href="#1-1-2标识符" class="headerlink" title="1.1.2标识符"></a>1.1.2标识符</h4><h4 id="1-1-3关键字"><a href="#1-1-3关键字" class="headerlink" title="1.1.3关键字"></a>1.1.3关键字</h4><p><img src="C:\Users\s1118\AppData\Roaming\Typora\typora-user-images\image-20221004175945877.png" alt="image-20221004175945877"></p>
+<h3 id="1-2数据类型"><a href="#1-2数据类型" class="headerlink" title="1.2数据类型"></a>1.2数据类型</h3><h4 id="1-2-1基本类型"><a href="#1-2-1基本类型" class="headerlink" title="1.2.1基本类型"></a>1.2.1基本类型</h4><h5 id="1-1整数型"><a href="#1-1整数型" class="headerlink" title="1.1整数型"></a>1.1整数型</h5><p>jdk7后数字间可加下划线</p>
+<h5 id="1-2浮点型"><a href="#1-2浮点型" class="headerlink" title="1.2浮点型"></a>1.2浮点型</h5><h5 id="1-3字符型"><a href="#1-3字符型" class="headerlink" title="1.3字符型"></a>1.3字符型</h5><h4 id="1-2-2引用类型"><a href="#1-2-2引用类型" class="headerlink" title="1.2.2引用类型"></a>1.2.2引用类型</h4><h5 id="1-1类"><a href="#1-1类" class="headerlink" title="1.1类"></a>1.1类</h5><h5 id="1-2接口"><a href="#1-2接口" class="headerlink" title="1.2接口"></a>1.2接口</h5><h5 id="1-3数组"><a href="#1-3数组" class="headerlink" title="1.3数组"></a>1.3数组</h5><h3 id="1-3类型转换"><a href="#1-3类型转换" class="headerlink" title="1.3类型转换"></a>1.3类型转换</h3><p>不能转换布尔值</p>
+<p>不能转换为不相干的</p>
+<p>转换时可能内存溢出或者精度出现问题</p>
+<h5 id="1-1强制转换"><a href="#1-1强制转换" class="headerlink" title="1.1强制转换"></a>1.1强制转换</h5><p>高—&gt;低</p>
+<p>system.out.println((int)啊)</p>
+<h5 id="1-2自动转换"><a href="#1-2自动转换" class="headerlink" title="1.2自动转换"></a>1.2自动转换</h5><p>低—&gt;高</p>
+<h3 id="1-4变量"><a href="#1-4变量" class="headerlink" title="1.4变量"></a>1.4变量</h3><p>Java为强类型语言，每个变量都需声明类型</p>
+<h4 id="1-1定义"><a href="#1-1定义" class="headerlink" title="1.1定义"></a>1.1定义</h4><p>变量类型 变量名&#x3D;值；</p>
+<h4 id="1-2类变量"><a href="#1-2类变量" class="headerlink" title="1.2类变量"></a>1.2类变量</h4><p>首字母小写和驼峰原则</p>
+<p>ps：驼峰原则：除第一个单词外，后面的单词首字母大写，warAlert</p>
+<h4 id="1-3实例变量"><a href="#1-3实例变量" class="headerlink" title="1.3实例变量"></a>1.3实例变量</h4><p>从属于对象</p>
+<p>若不自行初始化，为其类型默认值，布尔值为false</p>
+<h4 id="1-4局部变量"><a href="#1-4局部变量" class="headerlink" title="1.4局部变量"></a>1.4局部变量</h4><p>首字母小写和驼峰原则</p>
+<p>必须声明和初始化值</p>
+<h4 id="1-5常量"><a href="#1-5常量" class="headerlink" title="1.5常量"></a>1.5常量</h4><p>大写字母和下划线</p>
+<p>final  &#x2F;&#x2F;定义</p>
+<h4 id="1-6类名"><a href="#1-6类名" class="headerlink" title="1.6类名"></a>1.6类名</h4><p>首字母大写和驼峰原则</p>
+<h4 id="1-7方法名"><a href="#1-7方法名" class="headerlink" title="1.7方法名"></a>1.7方法名</h4><p>首字母小写和驼峰原则</p>
+<h3 id="1-5修饰符"><a href="#1-5修饰符" class="headerlink" title="1.5修饰符"></a>1.5修饰符</h3><p>不区分前后</p>
+<h3 id="1-6运算符"><a href="#1-6运算符" class="headerlink" title="1.6运算符"></a>1.6运算符</h3><p>优先级（）</p>
+<h4 id="1-1算数运算符"><a href="#1-1算数运算符" class="headerlink" title="1.1算数运算符"></a>1.1算数运算符</h4><p>+，-，*，&#x2F;，%，++，–</p>
+<h4 id="1-2赋值运算符"><a href="#1-2赋值运算符" class="headerlink" title="1.2赋值运算符"></a>1.2赋值运算符</h4><p>&#x3D;</p>
+<h4 id="1-3关系运算符"><a href="#1-3关系运算符" class="headerlink" title="1.3关系运算符"></a>1.3关系运算符</h4><p><code>&gt;,&lt;,&gt;=,&lt;=,==,!=</code></p>
+<h4 id="1-4逻辑运算符"><a href="#1-4逻辑运算符" class="headerlink" title="1.4逻辑运算符"></a>1.4逻辑运算符</h4><p>&amp;&amp;,||,!</p>
+<p>短路运算</p>
+<p>与运算前面错误不会执行后面</p>
+<h4 id="1-5位运算符"><a href="#1-5位运算符" class="headerlink" title="1.5位运算符"></a>1.5位运算符</h4><p><code>&amp;,|,^,~</code></p>
+<p><code>&gt;&gt; // /2</code></p>
+<p><code>&lt;&lt; // *2</code></p>
+<p><code>&gt;&gt;&gt;</code></p>
+<h4 id="1-6条件运算符"><a href="#1-6条件运算符" class="headerlink" title="1.6条件运算符"></a>1.6条件运算符</h4><p>?:</p>
+<h4 id="1-7扩展赋值运算符"><a href="#1-7扩展赋值运算符" class="headerlink" title="1.7扩展赋值运算符"></a>1.7扩展赋值运算符</h4><p>+&#x3D;,-&#x3D;,*&#x3D;,&#x2F;&#x3D;</p>
+<h3 id="1-7连接符"><a href="#1-7连接符" class="headerlink" title="1.7连接符"></a>1.7连接符</h3><ul>
+<li></li>
+</ul>
+<h3 id="1-8javadoc"><a href="#1-8javadoc" class="headerlink" title="1.8javadoc"></a>1.8javadoc</h3><h2 id="2-编译型-amp-解释型"><a href="#2-编译型-amp-解释型" class="headerlink" title="2.编译型&amp;解释型"></a>2.编译型&amp;解释型</h2><h3 id="1-1编译型"><a href="#1-1编译型" class="headerlink" title="1.1编译型"></a>1.1编译型</h3><p>先编译（*.class）</p>
+<h4 id="1-1-1反编译"><a href="#1-1-1反编译" class="headerlink" title="1.1.1反编译"></a>1.1.1反编译</h4><h3 id="1-2解释性"><a href="#1-2解释性" class="headerlink" title="1.2解释性"></a>1.2解释性</h3><p>后解释</p>
+<h2 id="3-语句"><a href="#3-语句" class="headerlink" title="3.语句"></a>3.语句</h2><h3 id="1-1scanner对象"><a href="#1-1scanner对象" class="headerlink" title="1.1scanner对象"></a>1.1scanner对象</h3><p>通过scanner类来获取用户输入</p>
+<h4 id="1-1-1基本语法"><a href="#1-1-1基本语法" class="headerlink" title="1.1.1基本语法"></a>1.1.1基本语法</h4><p>Scanner s &#x3D; new Scanner(System.in);</p>
+<h4 id="1-1-2next-amp-nextLine"><a href="#1-1-2next-amp-nextLine" class="headerlink" title="1.1.2next()&amp;nextLine()"></a>1.1.2next()&amp;nextLine()</h4><p>next():</p>
+<ol>
+<li>一定要读取到有效字符后才可以结束输入</li>
+<li>对输入有效字符之前遇到的空白，next()方法会自动将其去掉</li>
+<li>只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符</li>
+<li>next()不能得到带有空格的字符串</li>
+</ol>
+<p>nextLine():</p>
+<ol>
+<li>以Enter为结束符，也就是说nextLine()方法返回的是输入回车之前的所有字符</li>
+<li>可以获得空白</li>
+</ol>
+<h3 id="1-2顺序结构"><a href="#1-2顺序结构" class="headerlink" title="1.2顺序结构"></a>1.2顺序结构</h3><p>正常语句依次执行</p>
+<h3 id="1-3选择结构"><a href="#1-3选择结构" class="headerlink" title="1.3选择结构"></a>1.3选择结构</h3><h4 id="1-3-1if语句"><a href="#1-3-1if语句" class="headerlink" title="1.3.1if语句"></a>1.3.1if语句</h4><h4 id="1-3-2if-else语句"><a href="#1-3-2if-else语句" class="headerlink" title="1.3.2if else语句"></a>1.3.2if else语句</h4><h4 id="1-3-3if-else-if语句"><a href="#1-3-3if-else-if语句" class="headerlink" title="1.3.3if else if语句"></a>1.3.3if else if语句</h4><h4 id="1-3-4if嵌套"><a href="#1-3-4if嵌套" class="headerlink" title="1.3.4if嵌套"></a>1.3.4if嵌套</h4><h4 id="1-3-5switch-case语句"><a href="#1-3-5switch-case语句" class="headerlink" title="1.3.5switch case语句"></a>1.3.5switch case语句</h4><p>jdk7后可比较string</p>
+<p>string仍为数字，转为数字后进行比较</p>
+<p>case &#x2F;&#x2F;穿透，若没有跳出循环则一直顺序</p>
+<p>switch (c){</p>
+<p>​	case ‘x’:</p>
+<p>}</p>
+<h3 id="1-4循环结构"><a href="#1-4循环结构" class="headerlink" title="1.4循环结构"></a>1.4循环结构</h3><h4 id="1-4-1while循环"><a href="#1-4-1while循环" class="headerlink" title="1.4.1while循环"></a>1.4.1while循环</h4><p>while（ture） &#x2F;&#x2F;死循环，避免</p>
+<p>while先判断后执行</p>
+<h4 id="1-4-2do-while循环"><a href="#1-4-2do-while循环" class="headerlink" title="1.4.2do while循环"></a>1.4.2do while循环</h4><p>do while先执行后判断,所以会保证执行一次</p>
+<h4 id="1-4-3for循环"><a href="#1-4-3for循环" class="headerlink" title="1.4.3for循环"></a>1.4.3for循环</h4><p>for（初始化;条件;迭代）</p>
+<h4 id="1-4-4增强for循环"><a href="#1-4-4增强for循环" class="headerlink" title="1.4.4增强for循环"></a>1.4.4增强for循环</h4><p>int[] number &#x3D; {10,20,30,40,50};  &#x2F;&#x2F;定义数组</p>
+<p>for  (int x:numbers){</p>
+<p>​	system.out.println(x);</p>
+<p>}</p>
+<h3 id="1-5break-amp-coutinue"><a href="#1-5break-amp-coutinue" class="headerlink" title="1.5break&amp;coutinue"></a>1.5break&amp;coutinue</h3><h4 id="1-5-1break"><a href="#1-5-1break" class="headerlink" title="1.5.1break"></a>1.5.1break</h4><p>跳出循环</p>
+<h4 id="1-5-2coutinue"><a href="#1-5-2coutinue" class="headerlink" title="1.5.2coutinue"></a>1.5.2coutinue</h4><p>跳过循环体后面，继续循环</p>
+<h2 id="4-包机制"><a href="#4-包机制" class="headerlink" title="4.包机制"></a>4.包机制</h2><p>文件夹</p>
+<p>一般利用公司域名倒置作为包名</p>
+<h3 id="1-1语法格式"><a href="#1-1语法格式" class="headerlink" title="1.1语法格式"></a>1.1语法格式</h3><p>package pkg1[. pkg2[. pkg3…]];</p>
+<h3 id="1-2导入包"><a href="#1-2导入包" class="headerlink" title="1.2导入包"></a>1.2导入包</h3><p>import package[.package2…].(classname|*);</p>
+<h2 id="5-方法"><a href="#5-方法" class="headerlink" title="5.方法"></a>5.方法</h2><h3 id="1-1定义-amp-调用"><a href="#1-1定义-amp-调用" class="headerlink" title="1.1定义&amp;调用"></a>1.1定义&amp;调用</h3><p>修饰符 返回值类型 方法名（参数类型 参数名）{</p>
+<p>​	…</p>
+<p>​	方法体</p>
+<p>​	…</p>
+<p>​	return 返回值；</p>
+<p>}</p>
+<p>方法包含一个方法头和一个方法体</p>
+<h4 id="1-1-1修饰符"><a href="#1-1-1修饰符" class="headerlink" title="1.1.1修饰符"></a>1.1.1修饰符</h4><p>修饰符，这是可选的，告诉编译器如何调用该方法。定义了该方法的访问类型</p>
+<h4 id="1-1-2返回值类型"><a href="#1-1-2返回值类型" class="headerlink" title="1.1.2返回值类型"></a>1.1.2返回值类型</h4><p>方法可能会返回值。returnValueType是方法返回值的数据类型。有些方法执行所需的操作，但没有返回值。在这种情况下，returnValueType是关键字void</p>
+<h4 id="1-1-3方法名"><a href="#1-1-3方法名" class="headerlink" title="1.1.3方法名"></a>1.1.3方法名</h4><p>是方法的实际名称。方法名和参数表共同构成方法签名</p>
+<h4 id="1-1-4参数类型"><a href="#1-1-4参数类型" class="headerlink" title="1.1.4参数类型"></a>1.1.4参数类型</h4><p>参数像是一个占位符。当方法被调用时，传递值给参数。这个值被称为实参或变量。参数列表是指方法的参数类型，顺序和参数的个数。参数是可选的，方法可以不包含任何参数</p>
+<ul>
+<li>形式参数：在方法被调用时用于接收外界输入的数据</li>
+<li>实参：调用方法时实际传给方法的数据</li>
+</ul>
+<h4 id="1-1-5方法体"><a href="#1-1-5方法体" class="headerlink" title="1.1.5方法体"></a>1.1.5方法体</h4><p>方法体包含具体的语句，定义该方法的功能</p>
+<h4 id="1-1-6return"><a href="#1-1-6return" class="headerlink" title="1.1.6return"></a>1.1.6return</h4><p>终止方法</p>
+<h4 id="1-1-7调用"><a href="#1-1-7调用" class="headerlink" title="1.1.7调用"></a>1.1.7调用</h4><p>调用方法：对象名.方法名（实参列表）</p>
+<p>如果方法返回值时void，方法调用一定是一条语句</p>
+<h3 id="1-2方法的重载"><a href="#1-2方法的重载" class="headerlink" title="1.2方法的重载"></a>1.2方法的重载</h3><h4 id="1-2-1定义"><a href="#1-2-1定义" class="headerlink" title="1.2.1定义"></a>1.2.1定义</h4><p>重载就是在一个类中，有相同的函数名称，但形参不同的函数</p>
+<h4 id="1-2-2规则"><a href="#1-2-2规则" class="headerlink" title="1.2.2规则"></a>1.2.2规则</h4><ul>
+<li>方法名必须相同</li>
+<li>参数列表必须不同（个数不同，或类型不同，参数排列顺序不同等）</li>
+<li>方法的返回类型可以相同也可以不相同</li>
+<li>仅仅返回类型不同不足以成为方法的重载</li>
+</ul>
+<h4 id="1-2-3实现"><a href="#1-2-3实现" class="headerlink" title="1.2.3实现"></a>1.2.3实现</h4><p>方法名称相同时，编译器会根据调用方法的参数个数，参数类型等去逐个匹配，以选择对应的方法，如果匹配失败，则编译器报错</p>
+<h3 id="1-3命令行传参"><a href="#1-3命令行传参" class="headerlink" title="1.3命令行传参"></a>1.3命令行传参</h3><h3 id="1-4可变参数"><a href="#1-4可变参数" class="headerlink" title="1.4可变参数"></a>1.4可变参数</h3><p>必须放在最后面</p>
+<h3 id="1-5递归"><a href="#1-5递归" class="headerlink" title="1.5递归"></a>1.5递归</h3><p>自己调用自己</p>
+<h4 id="1-5-1递归结构"><a href="#1-5-1递归结构" class="headerlink" title="1.5.1递归结构"></a>1.5.1递归结构</h4><ul>
+<li>递归头：什么时候不调用自身方法。如果没有头，将陷入死循环</li>
+<li>递归体：社么时候需要调用自身方法</li>
+</ul>
+<h2 id="1-6数组"><a href="#1-6数组" class="headerlink" title="1.6数组"></a>1.6数组</h2><h3 id="1-1定义-1"><a href="#1-1定义-1" class="headerlink" title="1.1定义"></a>1.1定义</h3><p>相同类型数据的有序集合</p>
+<h3 id="1-2特点"><a href="#1-2特点" class="headerlink" title="1.2特点"></a>1.2特点</h3><ul>
+<li>长度是确定的。数组一旦被创建，大小则不可被改变</li>
+<li>其元素必须是相同类型，不允许出现混合类型</li>
+<li>数组中的元素可以是任何数据类型，包括基本类型和引用类型</li>
+<li>数组变量属引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。数组本身就是对象，java中对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身就是在堆中的</li>
+</ul>
+<h3 id="1-3创建声明"><a href="#1-3创建声明" class="headerlink" title="1.3创建声明"></a>1.3创建声明</h3><p>获取数组长度 &#x2F;&#x2F;arrays.length</p>
+<h3 id="1-4使用"><a href="#1-4使用" class="headerlink" title="1.4使用"></a>1.4使用</h3><ul>
+<li>for循环</li>
+<li>for-each循环</li>
+<li>数组作方法入参</li>
+<li>数组作返回值</li>
+</ul>
+<h3 id="1-5多维数组"><a href="#1-5多维数组" class="headerlink" title="1.5多维数组"></a>1.5多维数组</h3><p>数组嵌套</p>
+<h3 id="1-6内存分析"><a href="#1-6内存分析" class="headerlink" title="1.6内存分析"></a>1.6内存分析</h3><p>声明数组，赋值</p>
+<h4 id="1-6-1堆"><a href="#1-6-1堆" class="headerlink" title="1.6.1堆"></a>1.6.1堆</h4><p>数组空间在堆中开辟，赋予值</p>
+<h4 id="1-6-2栈"><a href="#1-6-2栈" class="headerlink" title="1.6.2栈"></a>1.6.2栈</h4><p>数组名存入栈</p>
+<h3 id="1-7初始化"><a href="#1-7初始化" class="headerlink" title="1.7初始化"></a>1.7初始化</h3><h4 id="1-7-1静态初始化"><a href="#1-7-1静态初始化" class="headerlink" title="1.7.1静态初始化"></a>1.7.1静态初始化</h4><p>创建+赋值</p>
+<h4 id="1-7-2动态初始化"><a href="#1-7-2动态初始化" class="headerlink" title="1.7.2动态初始化"></a>1.7.2动态初始化</h4><p>自己去后期赋值</p>
+<h4 id="1-7-3默认初始化"><a href="#1-7-3默认初始化" class="headerlink" title="1.7.3默认初始化"></a>1.7.3默认初始化</h4><h3 id="1-8数组边界"><a href="#1-8数组边界" class="headerlink" title="1.8数组边界"></a>1.8数组边界</h3><p>ArrayIndexOutOfBoundsException   &#x2F;&#x2F;数组下标越界异常</p>
+<h2 id="1-7面向对象"><a href="#1-7面向对象" class="headerlink" title="1.7面向对象"></a>1.7面向对象</h2><h3 id="1-1本质"><a href="#1-1本质" class="headerlink" title="1.1本质"></a>1.1本质</h3><p>以类的方式组织代码，以对象的组织(封装)数据</p>
+<p>抽象</p>
+<h3 id="1-2特性"><a href="#1-2特性" class="headerlink" title="1.2特性"></a>1.2特性</h3><h4 id="1-2-1封装"><a href="#1-2-1封装" class="headerlink" title="1.2.1封装"></a>1.2.1封装</h4><p>高内聚(类的内部数据操作细节自己完成，不允许外部干涉)，低耦合(仅暴露少量方法给外部使用)</p>
+<p>该露的露，该藏得藏</p>
+<p>数据的隐藏，通过结合口来访问  &#x2F;&#x2F;信息隐藏</p>
+<p>属性私有 get(获取)&#x2F;set(设置值)</p>
+<h4 id="1-2-2继承"><a href="#1-2-2继承" class="headerlink" title="1.2.2继承"></a>1.2.2继承</h4><p>本质  &#x2F;&#x2F;对某一批类的抽象，从而实现对现实世界更好的建模</p>
+<p>扩展  &#x2F;&#x2F;extands，子类是父类的扩展</p>
+<p>java类中只有单继承，没有多继承</p>
+<ul>
+<li><p>继承是类和类之间的一种关系，除此之外，类和类的关系还有以来，组合，聚合等关系</p>
+</li>
+<li><p>继承关系的两个类，一个为子类(派生类)，一个为父类(基类)。子类继承父类，使用关键字extends来表示</p>
+</li>
+<li><p>子类与父类之间的关系，从意义上将应该具有is a的关系</p>
+</li>
+<li><p>object类</p>
+</li>
+<li><p>super</p>
+</li>
+</ul>
+<p>对比：</p>
+<p>this </p>
+<p>&#x2F;&#x2F;本身调用这个对象</p>
+<p>&#x2F;&#x2F;没有被继承也可以使用</p>
+<p>&#x2F;&#x2F;本类的构造</p>
+<p>super  </p>
+<p>&#x2F;&#x2F;代表父类对象的应用</p>
+<p>&#x2F;&#x2F;只能在继承条件下使用</p>
+<p>&#x2F;&#x2F;父类的构 你造</p>
+<p>隐藏代码:调用父类的无参</p>
+<p>调用父类构造器，必须要在子类第一行</p>
+<ul>
+<li>方法重写</li>
+</ul>
+<p>子类方法要和父类一致：方法体不同</p>
+<p>需要有继承关系</p>
+<p>子类重写父类</p>
+<p>只和非静态有关</p>
+<p>静态  &#x2F;&#x2F;方法的调用只和定义的数据类型有关</p>
+<ol>
+<li>方法名必须相同</li>
+<li>参数列表必须相同</li>
+<li>修饰符，范围可以扩大不可以缩小  &#x2F;&#x2F;public&gt;protected&gt;default&gt;private</li>
+<li>抛出的异常，范围，可以缩小但不能扩大</li>
+</ol>
+<p>父类的功能，子类不一定需要，或者不一定可以满足</p>
+<h4 id="1-2-3多态"><a href="#1-2-3多态" class="headerlink" title="1.2.3多态"></a>1.2.3多态</h4><p>动态编译：类型</p>
+<p>一个对象的实际类型是确定的，但可以指向的引用不确定  &#x2F;&#x2F;父类的引用指向子类</p>
+<p>同一个方法可以根据发送对象的不同而采用多种不同的行为方式</p>
+<p>一个对象的实际类型是确定的，但是可以指向对象的引用的类型有很多</p>
+<p>多态存在的条件</p>
+<ul>
+<li>有继承关系</li>
+<li>子类重写父类方法</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<p>注意：多态是方法的多态，属性没有多态性</p>
+<ol>
+<li>多态是方法的多态，属性没有多态</li>
+<li>父类和子类，有联系</li>
+<li>存在条件：继承关系，方法需要重写，父类引用指向子类对象</li>
+</ol>
+<p>instanceof</p>
+<p>子类转父类可能丢失方法</p>
+<p>父类引用指向子类对象</p>
+<p>把子类转换为父类，向上转型</p>
+<p>把父类转换为子类，向下转型，强制转换</p>
+<p>方便方法的调用，减少重复代码</p>
+<h3 id="1-3类"><a href="#1-3类" class="headerlink" title="1.3类"></a>1.3类</h3><ol>
+<li>静态的属性  &#x2F;&#x2F;属性</li>
+<li>动态的行为  &#x2F;&#x2F;方法</li>
+</ol>
+<p>类是抽象的需要实例化</p>
+<p>实例化后返回一个对象</p>
+<p>属性:字段</p>
+<p>方法</p>
+<p>一个类什么都不写也会存在一个构造方法  &#x2F;&#x2F;构造器</p>
+<p>单继承</p>
+<p>私有  &#x2F;&#x2F;private</p>
+<h4 id="1-3-1抽象类"><a href="#1-3-1抽象类" class="headerlink" title="1.3.1抽象类"></a>1.3.1抽象类</h4><p>抽象类  &#x2F;&#x2F;abstract，用在方法上，抽象方法</p>
+<p>抽象类的所有方法，继承了他的子类，都必须要实现他的方法</p>
+<ol>
+<li>不能new，只能子类实现  &#x2F;&#x2F;约束</li>
+<li>抽象类中可以写普通的方法</li>
+<li>抽象方法必须在抽象类中</li>
+</ol>
+<h4 id="1-3-1内部类"><a href="#1-3-1内部类" class="headerlink" title="1.3.1内部类"></a>1.3.1内部类</h4><p>获得外部类的私有属性</p>
+<p>静态内部类</p>
+<p>局部内部类</p>
+<p>没有名字初始化类，不用将实例保存到变量中</p>
+<h3 id="1-4创建-amp-初始化对象"><a href="#1-4创建-amp-初始化对象" class="headerlink" title="1.4创建&amp;初始化对象"></a>1.4创建&amp;初始化对象</h3><h4 id="1-4-1创建对象"><a href="#1-4-1创建对象" class="headerlink" title="1.4.1创建对象"></a>1.4.1创建对象</h4><p>具体</p>
+<p>使用new关键字创建对象</p>
+<h4 id="1-4-2构造器"><a href="#1-4-2构造器" class="headerlink" title="1.4.2构造器"></a>1.4.2构造器</h4><p>构造方法</p>
+<p>用来初始化值</p>
+<p>alt + insert &#x2F;&#x2F;生成构造器</p>
+<p>使用new关键字，必须要有构造器  &#x2F;&#x2F;本质是在调用构造器</p>
+<h5 id="1-1有参构造"><a href="#1-1有参构造" class="headerlink" title="1.1有参构造"></a>1.1有参构造</h5><p>一旦定义了有参构造，无参就必须显示定义</p>
+<h5 id="1-1特点"><a href="#1-1特点" class="headerlink" title="1.1特点"></a>1.1特点</h5><ol>
+<li>必须和类的名字相同</li>
+<li>必须没有返回类型，也不能写void</li>
+</ol>
+<h3 id="1-5接口"><a href="#1-5接口" class="headerlink" title="1.5接口"></a>1.5接口</h3><p>interface</p>
+<p>规范</p>
+<p>接口的本质是契约</p>
+<p>接口中的所有定义都是灰色的</p>
+<p>类可以实现接口</p>
+<p>实现了接口的类，就需要重写接口的方法</p>
+<p>接口实现多继承</p>
+<p>接口中定义的属性都是常量</p>
+<h4 id="1-5-1作用"><a href="#1-5-1作用" class="headerlink" title="1.5.1作用"></a>1.5.1作用</h4><ol>
+<li>约束</li>
+<li>定义方法</li>
+<li>public abstract</li>
+<li>public static fianl</li>
+<li>接口不能实例化，接口中没有构造方法</li>
+<li>implements可以实现多个接口</li>
+<li>必须要重写接口中的方法</li>
+</ol>
+<h3 id="1-6异常"><a href="#1-6异常" class="headerlink" title="1.6异常"></a>1.6异常</h3><p>exception</p>
+<p>检查性异常  </p>
+<p>运行时异常  &#x2F;&#x2F;RuntimeException</p>
+<p>错误 &#x2F;&#x2F;error，不属于异常</p>
+<h4 id="1-6-1异常处理机制"><a href="#1-6-1异常处理机制" class="headerlink" title="1.6.1异常处理机制"></a>1.6.1异常处理机制</h4><p>try</p>
+<p>catch  &#x2F;&#x2F;捕获异常</p>
+<p>finally  &#x2F;&#x2F;处理善后，可以不加</p>
+<p>异常关键字</p>
+<ol>
+<li>throw</li>
+<li>throws</li>
+<li>catch</li>
+<li>finally</li>
+<li>try</li>
+</ol>
+<p>自定义异常</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/10/26/%E5%89%8D%E7%AB%AF/" rel="next" title="css基础">
+                <i class="fas fa-angle-left"></i> css基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+          
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      
+      
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <img class="site-author-image scaleup" itemprop="image"
+              src="/images/Anya.png"
+              alt="" />
+            <div class="site-author-info">
+              <p class="site-author-name" itemprop="name">aoman</p>
+              <p class="site-description" itemprop="description">生活无趣搞点<a target="_blank" rel="noopener" href="https://www.douyin.com/">好看的</a><br>
+每天变强一点点<br>
+生当做人杰，死亦为鬼雄。<br>
+天行健，君子以自强不息。<br>
+燕雀安知鸿鹄之志？<br>
+老骥伏枥，志在千里；烈士暮年，壮心不已。<br>
+天生我材必有用。<br>
+千磨万击还坚劲，任尔东西南北风。<br>
+</p>
+            </div>
+          </div>
+
+          <div class="links-of-author">
+            
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://twitter.com/" target="_blank" title="Twitter">
+                       <i class="fab fa-twitter" style="color: #2FB0EC"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="https://github.com/aomanbuaoman" target="_blank" title="GitHub">
+                       <i class="fab fa-github" style="color: #000"></i> 
+                      <span> aoman </span>
+               </a>
+                </span>
+              
+                <span class="links-of-author-item scaleup">
+                  <a href="javascript:;" target="_blank" title="Edit">
+                       <i style="fill: #666"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16"><path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/></svg></i>
+                      <span> emmm </span>
+               </a>
+                </span>
+              
+            
+          </div>
+
+          <div class="des-of-author">
+              <div class="des-of-author-nav">
+                
+              </div>
+              <div class="des-of-author-panel">
+                
+              </div>
+          </div>
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaSE"><span class="nav-number">1.</span> <span class="nav-text">javaSE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%B3%A8%E9%87%8A-amp-%E6%A0%87%E8%AF%86%E7%AC%A6-amp-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1注释&amp;标识符&amp;关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.1.1注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">1.1.2标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">1.1.3关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.2.1基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E6%95%B4%E6%95%B0%E5%9E%8B"><span class="nav-number">1.1.2.1.1.</span> <span class="nav-text">1.1整数型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="nav-number">1.1.2.1.2.</span> <span class="nav-text">1.2浮点型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="nav-number">1.1.2.1.3.</span> <span class="nav-text">1.3字符型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">1.2.2引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E7%B1%BB"><span class="nav-number">1.1.2.2.1.</span> <span class="nav-text">1.1类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.2.2.2.</span> <span class="nav-text">1.2接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.2.2.3.</span> <span class="nav-text">1.3数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.3.0.1.</span> <span class="nav-text">1.1强制转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.3.0.2.</span> <span class="nav-text">1.2自动转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1.1定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">1.2类变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">1.3实例变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">1.4局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">1.5常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E7%B1%BB%E5%90%8D"><span class="nav-number">1.1.4.6.</span> <span class="nav-text">1.6类名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7%E6%96%B9%E6%B3%95%E5%90%8D"><span class="nav-number">1.1.4.7.</span> <span class="nav-text">1.7方法名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">1.1算数运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">1.2赋值运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">1.3关系运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.4.</span> <span class="nav-text">1.4逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.5.</span> <span class="nav-text">1.5位运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.6.</span> <span class="nav-text">1.6条件运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7%E6%89%A9%E5%B1%95%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.7.</span> <span class="nav-text">1.7扩展赋值运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E8%BF%9E%E6%8E%A5%E7%AC%A6"><span class="nav-number">1.1.7.</span> <span class="nav-text">1.7连接符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8javadoc"><span class="nav-number">1.1.8.</span> <span class="nav-text">1.8javadoc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BC%96%E8%AF%91%E5%9E%8B-amp-%E8%A7%A3%E9%87%8A%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">2.编译型&amp;解释型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E7%BC%96%E8%AF%91%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1编译型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.1.1反编译</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E8%A7%A3%E9%87%8A%E6%80%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2解释性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.</span> <span class="nav-text">3.语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1scanner%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.1scanner对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1.1.1基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2next-amp-nextLine"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">1.1.2next()&amp;nextLine()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.2顺序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3选择结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1if%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">1.3.1if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2if-else%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">1.3.2if else语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3if-else-if%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">1.3.3if else if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-4if%E5%B5%8C%E5%A5%97"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">1.3.4if嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-5switch-case%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.3.5.</span> <span class="nav-text">1.3.5switch case语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.4循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1while%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">1.4.1while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2do-while%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">1.4.2do while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3for%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">1.4.3for循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-4%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">1.4.4增强for循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5break-amp-coutinue"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.5break&amp;coutinue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1break"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">1.5.1break</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-2coutinue"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">1.5.2coutinue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8C%85%E6%9C%BA%E5%88%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4.包机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.1语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.2导入包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">5.方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89-amp-%E8%B0%83%E7%94%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.1定义&amp;调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">1.1.1修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">1.1.2返回值类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3%E6%96%B9%E6%B3%95%E5%90%8D"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">1.1.3方法名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-4%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">1.1.4参数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-5%E6%96%B9%E6%B3%95%E4%BD%93"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">1.1.5方法体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-6return"><span class="nav-number">1.5.1.6.</span> <span class="nav-text">1.1.6return</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-7%E8%B0%83%E7%94%A8"><span class="nav-number">1.5.1.7.</span> <span class="nav-text">1.1.7调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-number">1.5.2.</span> <span class="nav-text">1.2方法的重载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%AE%9A%E4%B9%89"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">1.2.1定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E8%A7%84%E5%88%99"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">1.2.2规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">1.2.3实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BC%A0%E5%8F%82"><span class="nav-number">1.5.3.</span> <span class="nav-text">1.3命令行传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">1.5.4.</span> <span class="nav-text">1.4可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E9%80%92%E5%BD%92"><span class="nav-number">1.5.5.</span> <span class="nav-text">1.5递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1%E9%80%92%E5%BD%92%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.5.1.</span> <span class="nav-text">1.5.1递归结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6%E6%95%B0%E7%BB%84"><span class="nav-number">1.6.</span> <span class="nav-text">1.6数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%AE%9A%E4%B9%89-1"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.1定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%89%B9%E7%82%B9"><span class="nav-number">1.6.2.</span> <span class="nav-text">1.2特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E5%88%9B%E5%BB%BA%E5%A3%B0%E6%98%8E"><span class="nav-number">1.6.3.</span> <span class="nav-text">1.3创建声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E4%BD%BF%E7%94%A8"><span class="nav-number">1.6.4.</span> <span class="nav-text">1.4使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.6.5.</span> <span class="nav-text">1.5多维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-number">1.6.6.</span> <span class="nav-text">1.6内存分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-1%E5%A0%86"><span class="nav-number">1.6.6.1.</span> <span class="nav-text">1.6.1堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-2%E6%A0%88"><span class="nav-number">1.6.6.2.</span> <span class="nav-text">1.6.2栈</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.6.7.</span> <span class="nav-text">1.7初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-1%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.6.7.1.</span> <span class="nav-text">1.7.1静态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-2%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.6.7.2.</span> <span class="nav-text">1.7.2动态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-3%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.6.7.3.</span> <span class="nav-text">1.7.3默认初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8%E6%95%B0%E7%BB%84%E8%BE%B9%E7%95%8C"><span class="nav-number">1.6.8.</span> <span class="nav-text">1.8数组边界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.7.</span> <span class="nav-text">1.7面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%9C%AC%E8%B4%A8"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.1本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E7%89%B9%E6%80%A7"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.2特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1%E5%B0%81%E8%A3%85"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">1.2.1封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2%E7%BB%A7%E6%89%BF"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">1.2.2继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3%E5%A4%9A%E6%80%81"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">1.2.3多态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E7%B1%BB"><span class="nav-number">1.7.3.</span> <span class="nav-text">1.3类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">1.3.1抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">1.3.1内部类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E5%88%9B%E5%BB%BA-amp-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.7.4.</span> <span class="nav-text">1.4创建&amp;初始化对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.7.4.1.</span> <span class="nav-text">1.4.1创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">1.7.4.2.</span> <span class="nav-text">1.4.2构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0"><span class="nav-number">1.7.4.2.1.</span> <span class="nav-text">1.1有参构造</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1%E7%89%B9%E7%82%B9"><span class="nav-number">1.7.4.2.2.</span> <span class="nav-text">1.1特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.7.5.</span> <span class="nav-text">1.5接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1%E4%BD%9C%E7%94%A8"><span class="nav-number">1.7.5.1.</span> <span class="nav-text">1.5.1作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6%E5%BC%82%E5%B8%B8"><span class="nav-number">1.7.6.</span> <span class="nav-text">1.6异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-1%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">1.7.6.1.</span> <span class="nav-text">1.6.1异常处理机制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-image">
+        <img src="/images/footer.png">
+      </div>
+      <div class="footer-inner">
+        <p>博客已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+
+
+<p>© <span itemprop="copyrightYear">2022</span> aoman.
+    
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    
+    
+    Theme By <a href="https://github.com/XiangNorth/hexo-theme-anya" target="_blank" class="external" rel="nofollow">Anya</a>
+    
+    
+     v1.0.2.
+     
+     
+    <a href="/sitemap.xml" target="_blank">站点地图</a>.
+    
+</p>
+<p>Made with <i class="fas fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">John Doe</span>. </p>
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <img src="/images/scroll.png">
+      </div>
+    
+
+  </div>
+
+  <script type="text/javascript" src="/js/anya.min.js?v=1.0.2"></script>
+
+  
+
+  
+
+  
+  
+</body>
+</html>
